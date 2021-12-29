@@ -1,7 +1,7 @@
 # ///////////////////////////////////////////////////////////////
 #
 # BY: WANDERSON M.PIMENTA
-# PROJECT MADE WITH: Qt Designer and PySide6
+# PROJECT MADE WITH: Qt Designer and PySide2
 # V: 1.0.0
 #
 # This project can be used freely for all uses, as long as they maintain the
@@ -22,7 +22,7 @@
 # Property (pyqtProperty), Slot (pyqtSlot), Signal (pyqtSignal)
 # among others.
 # ///////////////////////////////////////////////////////////////
-from PySide6.QtCore import *
-from PySide6.QtGui import *
-from PySide6.QtWidgets import *
-from PySide6.QtSvgWidgets import *
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+from PySide2.QtSvg import *
