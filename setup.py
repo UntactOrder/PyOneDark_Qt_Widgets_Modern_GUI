@@ -15,7 +15,7 @@ target = Executable(
 # SETUP CX FREEZE
 setup(
     name = "PyOneDark",
-    version = "1.0",
+    version = "1.0.0.0",
     description = "Modern GUI for Python applications",
     author = "Wanderson M. Pimenta",
     options = {'build_exe' : {'include_files' : files}},
