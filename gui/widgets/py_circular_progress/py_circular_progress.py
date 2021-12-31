@@ -16,7 +16,14 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QWidget
+from qt_core import QGraphicsDropShadowEffect
+from qt_core import QColor
+from qt_core import QPainter
+from qt_core import QFont
+from qt_core import QRect
+from qt_core import QPen
+from qt_core import Qt
 
 
 class PyCircularProgress(QWidget):
@@ -68,7 +75,7 @@ class PyCircularProgress(QWidget):
         # PAINTER
         paint = QPainter()
         paint.begin(self)
-        paint.setRenderHint(QPainter.Antialiasing) # remove pixelated edges
+        paint.setRenderHint(QPainter.Antialiasing)  # remove pixelated edges
         paint.setFont(QFont(self.font_family, self.font_size))
 
         # CREATE RECTANGLE

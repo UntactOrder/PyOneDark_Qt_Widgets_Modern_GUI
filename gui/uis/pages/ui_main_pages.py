@@ -16,7 +16,19 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QVBoxLayout
+from qt_core import QStackedWidget
+from qt_core import QWidget
+from qt_core import QFrame
+from qt_core import QSize
+from qt_core import QLabel
+from qt_core import QFont
+from qt_core import Qt
+from qt_core import QMetaObject
+from qt_core import QCoreApplication
+from qt_core import QScrollArea
+from qt_core import QRect
+from qt_core import QHBoxLayout
 
 
 class Ui_MainPages(object):
@@ -66,7 +78,6 @@ class Ui_MainPages(object):
 
         self.center_page_layout.addWidget(self.label)
 
-
         self.page_1_layout.addWidget(self.welcome_base, 0, Qt.AlignHCenter)
 
         self.pages.addWidget(self.page_1)
@@ -104,7 +115,7 @@ class Ui_MainPages(object):
 
         self.description_label = QLabel(self.contents)
         self.description_label.setObjectName(u"description_label")
-        self.description_label.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.description_label.setAlignment(Qt.AlignHCenter | Qt.AlignTop)
         self.description_label.setWordWrap(True)
 
         self.verticalLayout.addWidget(self.description_label)
@@ -141,9 +152,10 @@ class Ui_MainPages(object):
         self.pages.addWidget(self.page_2)
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
-        self.page_3.setStyleSheet(u"QFrame {\n"
-"	font-size: 16pt;\n"
-"}")
+        self.page_3.setStyleSheet(
+            u"QFrame {\n"
+            "	font-size: 16pt;\n"
+            "}")
         self.page_3_layout = QVBoxLayout(self.page_3)
         self.page_3_layout.setObjectName(u"page_3_layout")
         self.empty_page_label = QLabel(self.page_3)
@@ -166,9 +178,17 @@ class Ui_MainPages(object):
 
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
-        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome To PyOneDark GUI", None))
-        self.title_label.setText(QCoreApplication.translate("MainPages", u"Custom Widgets Page", None))
-        self.description_label.setText(QCoreApplication.translate("MainPages", u"Here will be all the custom widgets, they will be added over time on this page.\n"
-"I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
+        self.label.setText(QCoreApplication.translate(
+            "MainPages", u"Welcome To PyOneDark GUI", None
+        ))
+        self.title_label.setText(QCoreApplication.translate(
+            "MainPages", u"Custom Widgets Page", None
+        ))
+        self.description_label.setText(QCoreApplication.translate(
+            "MainPages",
+            u"Here will be all the custom widgets, they will be added over time on this page.\n"
+            "I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.",
+            None
+        ))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
     # retranslateUi

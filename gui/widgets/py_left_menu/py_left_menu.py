@@ -16,16 +16,24 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QPropertyAnimation
+from qt_core import QWidget
+from qt_core import Signal
+from qt_core import QVBoxLayout
+from qt_core import QEasingCurve
+from qt_core import QFrame
+from qt_core import QPushButton
+from qt_core import Qt
 
 # IMPORT BUTTON AND DIV
 # ///////////////////////////////////////////////////////////////
-from . py_left_menu_button import PyLeftMenuButton
-from . py_div import PyDiv
+from .py_left_menu_button import PyLeftMenuButton
+from .py_div import PyDiv
 
 # IMPORT FUNCTIONS
 # ///////////////////////////////////////////////////////////////
-from gui.core.functions import *
+from gui.core.functions import Functions
+
 
 # PY LEFT MENU
 # ///////////////////////////////////////////////////////////////
@@ -35,28 +43,15 @@ class PyLeftMenu(QWidget):
     released = Signal(object)
 
     def __init__(
-        self,
-        parent = None,
-        app_parent = None,
-        dark_one = "#1b1e23",
-        dark_three = "#21252d",
-        dark_four = "#272c36",
-        bg_one = "#2c313c",
-        icon_color = "#c3ccdf",
-        icon_color_hover = "#dce1ec",
-        icon_color_pressed = "#edf0f5",
-        icon_color_active = "#f5f6f9",
-        context_color = "#568af2",
-        text_foreground = "#8a95aa",
-        text_active = "#dce1ec",
-        duration_time = 500,
-        radius = 8,
-        minimum_width = 50,
-        maximum_width = 240,
-        icon_path = "icon_menu.svg",
-        icon_path_close = "icon_menu_close.svg",
-        toggle_text = "Hide Menu",
-        toggle_tooltip = "Show menu"
+        self, parent=None, app_parent=None,
+        dark_one="#1b1e23", dark_three="#21252d", dark_four="#272c36",
+        bg_one="#2c313c", icon_color="#c3ccdf", icon_color_hover="#dce1ec",
+        icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
+        context_color="#568af2", text_foreground="#8a95aa",
+        text_active="#dce1ec", duration_time=500,
+        radius=8, minimum_width=50, maximum_width=240,
+        icon_path="icon_menu.svg", icon_path_close="icon_menu_close.svg",
+        toggle_text="Hide Menu", toggle_tooltip="Show menu"
     ):
         super().__init__()
 
@@ -93,21 +88,17 @@ class PyLeftMenu(QWidget):
         # TOGGLE BUTTON AND DIV MENUS
         # ///////////////////////////////////////////////////////////////
         self.toggle_button = PyLeftMenuButton(
-            app_parent, 
-            text = toggle_text, 
-            tooltip_text = toggle_tooltip,
-            dark_one = self._dark_one,
-            dark_three = self._dark_three,
-            dark_four = self._dark_four,
-            bg_one = self._bg_one,
-            icon_color = self._icon_color,
-            icon_color_hover = self._icon_color_active,
-            icon_color_pressed = self._icon_color_pressed,
-            icon_color_active = self._icon_color_active,
-            context_color = self._context_color,
-            text_foreground = self._text_foreground,
-            text_active = self._text_active,
-            icon_path = icon_path
+            app_parent, text=toggle_text, tooltip_text=toggle_tooltip,
+            dark_one=self._dark_one, dark_three=self._dark_three,
+            dark_four=self._dark_four, bg_one=self._bg_one,
+            icon_color=self._icon_color,
+            icon_color_hover=self._icon_color_active,
+            icon_color_pressed=self._icon_color_pressed,
+            icon_color_active=self._icon_color_active,
+            context_color=self._context_color,
+            text_foreground=self._text_foreground,
+            text_active=self._text_active,
+            icon_path=icon_path
         )
         self.toggle_button.clicked.connect(self.toggle_animation)
         self.div_top = PyDiv(dark_four)
@@ -127,7 +118,7 @@ class PyLeftMenu(QWidget):
     # Add btns and emit signals
     # ///////////////////////////////////////////////////////////////
     def add_menus(self, parameters):
-        if parameters != None:
+        if parameters is not None:
             for parameter in parameters:
                 _btn_icon = parameter['btn_icon']
                 _btn_id = parameter['btn_id']
@@ -137,23 +128,17 @@ class PyLeftMenu(QWidget):
                 _is_active = parameter['is_active']
 
                 self.menu = PyLeftMenuButton(
-                    self._app_parent,
-                    text = _btn_text,
-                    btn_id = _btn_id,
-                    tooltip_text = _btn_tooltip,
-                    dark_one = self._dark_one,
-                    dark_three = self._dark_three,
-                    dark_four = self._dark_four,
-                    bg_one = self._bg_one,
-                    icon_color = self._icon_color,
-                    icon_color_hover = self._icon_color_active,
-                    icon_color_pressed = self._icon_color_pressed,
-                    icon_color_active = self._icon_color_active,
-                    context_color = self._context_color,
-                    text_foreground = self._text_foreground,
-                    text_active = self._text_active,
-                    icon_path = _btn_icon,
-                    is_active = _is_active
+                    self._app_parent, text=_btn_text, btn_id=_btn_id,
+                    tooltip_text=_btn_tooltip, dark_one=self._dark_one,
+                    dark_three=self._dark_three, dark_four=self._dark_four,
+                    bg_one=self._bg_one, icon_color=self._icon_color,
+                    icon_color_hover=self._icon_color_active,
+                    icon_color_pressed=self._icon_color_pressed,
+                    icon_color_active=self._icon_color_active,
+                    context_color=self._context_color,
+                    text_foreground=self._text_foreground,
+                    text_active=self._text_active,
+                    icon_path=_btn_icon, is_active=_is_active
                 )
                 self.menu.clicked.connect(self.btn_clicked)
                 self.menu.released.connect(self.btn_released)
@@ -169,7 +154,7 @@ class PyLeftMenu(QWidget):
     # ///////////////////////////////////////////////////////////////
     def btn_clicked(self):
         self.clicked.emit(self.menu)
-    
+
     def btn_released(self):
         self.released.emit(self.menu)
 
@@ -228,7 +213,7 @@ class PyLeftMenu(QWidget):
     def setup_ui(self):
         # ADD MENU LAYOUT
         self.left_menu_layout = QVBoxLayout(self)
-        self.left_menu_layout.setContentsMargins(0,0,0,0)
+        self.left_menu_layout.setContentsMargins(0, 0, 0, 0)
 
         # ADD BG
         self.bg = QFrame()
@@ -241,16 +226,16 @@ class PyLeftMenu(QWidget):
 
         # ADD LAYOUTS
         self._layout = QVBoxLayout(self.bg)
-        self._layout.setContentsMargins(0,0,0,0)
+        self._layout.setContentsMargins(0, 0, 0, 0)
 
         # TOP LAYOUT
         self.top_layout = QVBoxLayout(self.top_frame)
-        self.top_layout.setContentsMargins(0,0,0,0)
+        self.top_layout.setContentsMargins(0, 0, 0, 0)
         self.top_layout.setSpacing(1)
 
         # BOTTOM LAYOUT
         self.bottom_layout = QVBoxLayout(self.bottom_frame)
-        self.bottom_layout.setContentsMargins(0,0,0,8)
+        self.bottom_layout.setContentsMargins(0, 0, 0, 8)
         self.bottom_layout.setSpacing(1)
 
         # ADD TOP AND BOTTOM FRAME
@@ -259,8 +244,3 @@ class PyLeftMenu(QWidget):
 
         # ADD BG TO LAYOUT
         self.left_menu_layout.addWidget(self.bg)
-
-        
-
-        
-

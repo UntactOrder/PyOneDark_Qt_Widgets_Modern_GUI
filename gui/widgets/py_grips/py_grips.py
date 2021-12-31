@@ -14,18 +14,21 @@
 #
 # ///////////////////////////////////////////////////////////////
 
-# IMPORT PACKAGES AND MODULES
-# ///////////////////////////////////////////////////////////////
-import sys
-
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QWidget
+from qt_core import QSizeGrip
+from qt_core import QFrame
+from qt_core import QRect
+from qt_core import QCursor
+from qt_core import QSize
+from qt_core import Qt
+
 
 # PY GRIPS
 # ///////////////////////////////////////////////////////////////
 class PyGrips(QWidget):
-    def __init__(self, parent, position, disable_color = False):
+    def __init__(self, parent, position, disable_color=False):
 
         # SETUP UI
         # ///////////////////////////////////////////////////////////////
@@ -41,7 +44,7 @@ class PyGrips(QWidget):
             grip = QSizeGrip(self.wi.top_left_grip)
             grip.setFixedSize(self.wi.top_left_grip.size())
             self.setGeometry(5, 5, 15, 15)
-            
+
             # ENABLE COLOR
             if disable_color:
                 self.wi.top_left_grip.setStyleSheet("background: transparent")
@@ -53,7 +56,7 @@ class PyGrips(QWidget):
             grip = QSizeGrip(self.wi.top_right_grip)
             grip.setFixedSize(self.wi.top_right_grip.size())
             self.setGeometry(self.parent.width() - 20, 5, 15, 15)
-            
+
             # ENABLE COLOR
             if disable_color:
                 self.wi.top_right_grip.setStyleSheet("background: transparent")
@@ -65,7 +68,7 @@ class PyGrips(QWidget):
             grip = QSizeGrip(self.wi.bottom_left_grip)
             grip.setFixedSize(self.wi.bottom_left_grip.size())
             self.setGeometry(5, self.parent.height() - 20, 15, 15)
-            
+
             # ENABLE COLOR
             if disable_color:
                 self.wi.bottom_left_grip.setStyleSheet("background: transparent")
@@ -77,7 +80,7 @@ class PyGrips(QWidget):
             grip = QSizeGrip(self.wi.bottom_right_grip)
             grip.setFixedSize(self.wi.bottom_right_grip.size())
             self.setGeometry(self.parent.width() - 20, self.parent.height() - 20, 15, 15)
-            
+
             # ENABLE COLOR
             if disable_color:
                 self.wi.bottom_right_grip.setStyleSheet("background: transparent")

@@ -16,13 +16,16 @@
 
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
-from gui.uis.windows.main_window.functions_main_window import *
+from gui.uis.windows.main_window.functions_main_window import MainFunctions
 import sys
 import os
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import SUPPORT_WINDOWS_7
+from qt_core import QMainWindow
+from qt_core import QApplication
+from qt_core import QIcon
 
 # IMPORT SETTINGS
 # ///////////////////////////////////////////////////////////////
@@ -31,11 +34,13 @@ from gui.core.json_settings import Settings
 # IMPORT PY ONE DARK WINDOWS
 # ///////////////////////////////////////////////////////////////
 # MAIN WINDOW
-from gui.uis.windows.main_window import *
+from gui.uis.windows.main_window import UI_MainWindow
+from gui.uis.windows.main_window import Functions
+from gui.uis.windows.main_window import SetupMainWindow
 
 # IMPORT PY ONE DARK WIDGETS
 # ///////////////////////////////////////////////////////////////
-from gui.widgets import *
+'from gui.widgets import *'
 
 # ADJUST QT FONT DPI FOR HIGHT SCALE AN 4K MONITOR
 # ///////////////////////////////////////////////////////////////
@@ -133,9 +138,9 @@ class MainWindow(QMainWindow):
             if btn.objectName() != "btn_close_left_column":
                 MainFunctions.set_left_column_menu(
                     self,
-                    menu = self.ui.left_column.menus.menu_2,
-                    title = "Info tab",
-                    icon_path = Functions.set_svg_icon("icon_info.svg")
+                    menu=self.ui.left_column.menus.menu_2,
+                    title="Info tab",
+                    icon_path=Functions.set_svg_icon("icon_info.svg")
                 )
 
         # SETTINGS LEFT
@@ -156,9 +161,9 @@ class MainWindow(QMainWindow):
             if btn.objectName() != "btn_close_left_column":
                 MainFunctions.set_left_column_menu(
                     self,
-                    menu = self.ui.left_column.menus.menu_1,
-                    title = "Settings Left Column",
-                    icon_path = Functions.set_svg_icon("icon_settings.svg")
+                    menu=self.ui.left_column.menus.menu_1,
+                    title="Settings Left Column",
+                    icon_path=Functions.set_svg_icon("icon_settings.svg")
                 )
 
         # TITLE BAR MENU

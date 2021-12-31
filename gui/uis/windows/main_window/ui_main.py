@@ -20,7 +20,10 @@ from gui.core.functions import Functions
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QVBoxLayout
+from qt_core import QWidget
+from qt_core import QFrame
+from qt_core import QHBoxLayout
 
 # IMPORT SETTINGS
 # ///////////////////////////////////////////////////////////////
@@ -32,11 +35,14 @@ from gui.core.json_themes import Themes
 
 # IMPORT PY ONE DARK WIDGETS
 # ///////////////////////////////////////////////////////////////
-from gui.widgets import *
+from gui.widgets import PyWindow
+from gui.widgets import PyLeftMenu
+from gui.widgets import PyLeftColumn
+from gui.widgets import PyTitleBar
 
 # IMPORT SETUP MAIN WINDOW
 # ///////////////////////////////////////////////////////////////
-from . setup_main_window import *
+'from .setup_main_window import SetupMainWindow'
 
 # IMPORT MAIN WINDOW PAGES / AND SIDE BOXES FOR APP
 # ///////////////////////////////////////////////////////////////
@@ -49,6 +55,7 @@ from gui.uis.columns.ui_right_column import Ui_RightColumn
 # CREDITS
 # ///////////////////////////////////////////////////////////////
 from gui.widgets.py_credits_bar.py_credits import PyCredits
+
 
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
@@ -81,24 +88,24 @@ class UI_MainWindow(object):
         ''')
         self.central_widget_layout = QVBoxLayout(self.central_widget)
         if self.settings["custom_title_bar"]:
-            self.central_widget_layout.setContentsMargins(10,10,10,10)
+            self.central_widget_layout.setContentsMargins(10, 10, 10, 10)
         else:
-            self.central_widget_layout.setContentsMargins(0,0,0,0)
-        
+            self.central_widget_layout.setContentsMargins(0, 0, 0, 0)
+
         # LOAD PY WINDOW CUSTOM WIDGET
         # Add inside PyWindow "layout" all Widgets
         # ///////////////////////////////////////////////////////////////
         self.window = PyWindow(
             parent,
-            bg_color = self.themes["app_color"]["bg_one"],
-            border_color = self.themes["app_color"]["bg_two"],
-            text_color = self.themes["app_color"]["text_foreground"]
+            bg_color=self.themes["app_color"]["bg_one"],
+            border_color=self.themes["app_color"]["bg_two"],
+            text_color=self.themes["app_color"]["text_foreground"]
         )
-        
+
         # If disable custom title bar
         if not self.settings["custom_title_bar"]:
-            self.window.set_stylesheet(border_radius = 0, border_size = 0)
-        
+            self.window.set_stylesheet(border_radius=0, border_size=0)
+
         # ADD PY WINDOW TO CENTRAL WIDGET
         self.central_widget_layout.addWidget(self.window)
 
@@ -124,19 +131,19 @@ class UI_MainWindow(object):
         # Add custom left menu here
         # ///////////////////////////////////////////////////////////////
         self.left_menu = PyLeftMenu(
-            parent = self.left_menu_frame,
-            app_parent = self.central_widget, # For tooltip parent
-            dark_one = self.themes["app_color"]["dark_one"],
-            dark_three = self.themes["app_color"]["dark_three"],
-            dark_four = self.themes["app_color"]["dark_four"],
-            bg_one = self.themes["app_color"]["bg_one"],
-            icon_color = self.themes["app_color"]["icon_color"],
-            icon_color_hover = self.themes["app_color"]["icon_hover"],
-            icon_color_pressed = self.themes["app_color"]["icon_pressed"],
-            icon_color_active = self.themes["app_color"]["icon_active"],
-            context_color = self.themes["app_color"]["context_color"],
-            text_foreground = self.themes["app_color"]["text_foreground"],
-            text_active = self.themes["app_color"]["text_active"]
+            parent=self.left_menu_frame,
+            app_parent=self.central_widget,  # For tooltip parent
+            dark_one=self.themes["app_color"]["dark_one"],
+            dark_three=self.themes["app_color"]["dark_three"],
+            dark_four=self.themes["app_color"]["dark_four"],
+            bg_one=self.themes["app_color"]["bg_one"],
+            icon_color=self.themes["app_color"]["icon_color"],
+            icon_color_hover=self.themes["app_color"]["icon_hover"],
+            icon_color_pressed=self.themes["app_color"]["icon_pressed"],
+            icon_color_active=self.themes["app_color"]["icon_active"],
+            context_color=self.themes["app_color"]["context_color"],
+            text_foreground=self.themes["app_color"]["text_foreground"],
+            text_active=self.themes["app_color"]["text_active"]
         )
         self.left_menu_layout.addWidget(self.left_menu)
 
@@ -150,26 +157,26 @@ class UI_MainWindow(object):
 
         # ADD LAYOUT TO LEFT COLUMN
         self.left_column_layout = QVBoxLayout(self.left_column_frame)
-        self.left_column_layout.setContentsMargins(0,0,0,0)
+        self.left_column_layout.setContentsMargins(0, 0, 0, 0)
 
         # ADD CUSTOM LEFT MENU WIDGET
         self.left_column = PyLeftColumn(
             parent,
-            app_parent = self.central_widget,
-            text_title = "Settings Left Frame",
-            text_title_size = self.settings["font"]["title_size"],
-            text_title_color = self.themes['app_color']['text_foreground'],
-            icon_path = Functions.set_svg_icon("icon_settings.svg"),
-            dark_one = self.themes['app_color']['dark_one'],
-            bg_color = self.themes['app_color']['bg_three'],
-            btn_color = self.themes['app_color']['bg_three'],
-            btn_color_hover = self.themes['app_color']['bg_two'],
-            btn_color_pressed = self.themes['app_color']['bg_one'],
-            icon_color = self.themes['app_color']['icon_color'],
-            icon_color_hover = self.themes['app_color']['icon_hover'],
-            context_color = self.themes['app_color']['context_color'],
-            icon_color_pressed = self.themes['app_color']['icon_pressed'],
-            icon_close_path = Functions.set_svg_icon("icon_close.svg")
+            app_parent=self.central_widget,
+            text_title="Settings Left Frame",
+            text_title_size=self.settings["font"]["title_size"],
+            text_title_color=self.themes['app_color']['text_foreground'],
+            icon_path=Functions.set_svg_icon("icon_settings.svg"),
+            dark_one=self.themes['app_color']['dark_one'],
+            bg_color=self.themes['app_color']['bg_three'],
+            btn_color=self.themes['app_color']['bg_three'],
+            btn_color_hover=self.themes['app_color']['bg_two'],
+            btn_color_pressed=self.themes['app_color']['bg_one'],
+            icon_color=self.themes['app_color']['icon_color'],
+            icon_color_hover=self.themes['app_color']['icon_hover'],
+            context_color=self.themes['app_color']['context_color'],
+            icon_color_pressed=self.themes['app_color']['icon_pressed'],
+            icon_close_path=Functions.set_svg_icon("icon_close.svg")
         )
         self.left_column_layout.addWidget(self.left_column)
 
@@ -180,7 +187,7 @@ class UI_MainWindow(object):
 
         # ADD RIGHT APP LAYOUT
         self.right_app_layout = QVBoxLayout(self.right_app_frame)
-        self.right_app_layout.setContentsMargins(3,3,3,3)
+        self.right_app_layout.setContentsMargins(3, 3, 3, 3)
         self.right_app_layout.setSpacing(6)
 
         # ADD TITLE BAR FRAME
@@ -189,30 +196,30 @@ class UI_MainWindow(object):
         self.title_bar_frame.setMinimumHeight(40)
         self.title_bar_frame.setMaximumHeight(40)
         self.title_bar_layout = QVBoxLayout(self.title_bar_frame)
-        self.title_bar_layout.setContentsMargins(0,0,0,0)
-        
+        self.title_bar_layout.setContentsMargins(0, 0, 0, 0)
+
         # ADD CUSTOM TITLE BAR TO LAYOUT
         self.title_bar = PyTitleBar(
             parent,
-            logo_width = 100,
-            app_parent = self.central_widget,
-            logo_image = "logo_top_100x22.svg",
-            bg_color = self.themes["app_color"]["bg_two"],
-            div_color = self.themes["app_color"]["bg_three"],
-            btn_bg_color = self.themes["app_color"]["bg_two"],
-            btn_bg_color_hover = self.themes["app_color"]["bg_three"],
-            btn_bg_color_pressed = self.themes["app_color"]["bg_one"],
-            icon_color = self.themes["app_color"]["icon_color"],
-            icon_color_hover = self.themes["app_color"]["icon_hover"],
-            icon_color_pressed = self.themes["app_color"]["icon_pressed"],
-            icon_color_active = self.themes["app_color"]["icon_active"],
-            context_color = self.themes["app_color"]["context_color"],
-            dark_one = self.themes["app_color"]["dark_one"],
-            text_foreground = self.themes["app_color"]["text_foreground"],
-            radius = 8,
-            font_family = self.settings["font"]["family"],
-            title_size = self.settings["font"]["title_size"],
-            is_custom_title_bar = self.settings["custom_title_bar"]
+            logo_width=100,
+            app_parent=self.central_widget,
+            logo_image="logo_top_100x22.svg",
+            bg_color=self.themes["app_color"]["bg_two"],
+            div_color=self.themes["app_color"]["bg_three"],
+            btn_bg_color=self.themes["app_color"]["bg_two"],
+            btn_bg_color_hover=self.themes["app_color"]["bg_three"],
+            btn_bg_color_pressed=self.themes["app_color"]["bg_one"],
+            icon_color=self.themes["app_color"]["icon_color"],
+            icon_color_hover=self.themes["app_color"]["icon_hover"],
+            icon_color_pressed=self.themes["app_color"]["icon_pressed"],
+            icon_color_active=self.themes["app_color"]["icon_active"],
+            context_color=self.themes["app_color"]["context_color"],
+            dark_one=self.themes["app_color"]["dark_one"],
+            text_foreground=self.themes["app_color"]["text_foreground"],
+            radius=8,
+            font_family=self.settings["font"]["family"],
+            title_size=self.settings["font"]["title_size"],
+            is_custom_title_bar=self.settings["custom_title_bar"]
         )
         self.title_bar_layout.addWidget(self.title_bar)
 
@@ -222,7 +229,7 @@ class UI_MainWindow(object):
 
         # CREATE LAYOUT
         self.content_area_layout = QHBoxLayout(self.content_area_frame)
-        self.content_area_layout.setContentsMargins(0,0,0,0)
+        self.content_area_layout.setContentsMargins(0, 0, 0, 0)
         self.content_area_layout.setSpacing(0)
 
         # LEFT CONTENT
@@ -240,7 +247,7 @@ class UI_MainWindow(object):
         # IMPORT RIGHT COLUMN
         # ///////////////////////////////////////////////////////////////
         self.content_area_right_layout = QVBoxLayout(self.right_column_frame)
-        self.content_area_right_layout.setContentsMargins(5,5,5,5)
+        self.content_area_right_layout.setContentsMargins(5, 5, 5, 5)
         self.content_area_right_layout.setSpacing(0)
 
         # RIGHT BG
@@ -272,16 +279,16 @@ class UI_MainWindow(object):
 
         # CREATE LAYOUT
         self.credits_layout = QVBoxLayout(self.credits_frame)
-        self.credits_layout.setContentsMargins(0,0,0,0)
+        self.credits_layout.setContentsMargins(0, 0, 0, 0)
 
         # ADD CUSTOM WIDGET CREDITS
         self.credits = PyCredits(
-            bg_two = self.themes["app_color"]["bg_two"],
-            copyright = self.settings["copyright"],
-            version = self.settings["version"],
-            font_family = self.settings["font"]["family"],
-            text_size = self.settings["font"]["text_size"],
-            text_description_color = self.themes["app_color"]["text_description"]
+            bg_two=self.themes["app_color"]["bg_two"],
+            copyright=self.settings["copyright"],
+            version=self.settings["version"],
+            font_family=self.settings["font"]["family"],
+            text_size=self.settings["font"]["text_size"],
+            text_description_color=self.themes["app_color"]["text_description"]
         )
 
         #  ADD TO LAYOUT
@@ -292,7 +299,7 @@ class UI_MainWindow(object):
         self.right_app_layout.addWidget(self.title_bar_frame)
         self.right_app_layout.addWidget(self.content_area_frame)
         self.right_app_layout.addWidget(self.credits_frame)
-        
+
         # ADD WIDGETS TO "PyWindow"
         # Add here your custom widgets or default widgets
         # ///////////////////////////////////////////////////////////////

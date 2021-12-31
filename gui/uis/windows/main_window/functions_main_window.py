@@ -16,15 +16,19 @@
 
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
-import sys
+'import sys'
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QPushButton
+from qt_core import QPropertyAnimation
+from qt_core import QEasingCurve
+from qt_core import QParallelAnimationGroup
 
 # LOAD UI MAIN
 # ///////////////////////////////////////////////////////////////
-from . ui_main import *
+from .ui_main import UI_MainWindow
+
 
 # FUNCTIONS
 class MainFunctions():
@@ -85,7 +89,7 @@ class MainFunctions():
     # ///////////////////////////////////////////////////////////////
     def get_left_menu_btn(self, object_name):
         return self.ui.left_menu.findChild(QPushButton, object_name)
-    
+
     # LEDT AND RIGHT COLUMNS / SHOW / HIDE
     # ///////////////////////////////////////////////////////////////
     def toggle_left_column(self):
@@ -111,26 +115,26 @@ class MainFunctions():
         minimum_right = self.ui.settings["right_column_size"]["minimum"]
         maximum_right = self.ui.settings["right_column_size"]["maximum"]
 
-        # Check Left Values        
+        # Check Left Values
         if left_box_width == minimum_left and direction == "left":
             left_width = maximum_left
         else:
             left_width = minimum_left
 
-        # Check Right values        
+        # Check Right values
         if right_box_width == minimum_right and direction == "right":
             right_width = maximum_right
         else:
-            right_width = minimum_right       
+            right_width = minimum_right
 
-        # ANIMATION LEFT BOX        
+        # ANIMATION LEFT BOX
         self.left_box = QPropertyAnimation(self.ui.left_column_frame, b"minimumWidth")
         self.left_box.setDuration(time_animation)
         self.left_box.setStartValue(left_box_width)
         self.left_box.setEndValue(left_width)
         self.left_box.setEasingCurve(QEasingCurve.InOutQuart)
 
-        # ANIMATION RIGHT BOX        
+        # ANIMATION RIGHT BOX
         self.right_box = QPropertyAnimation(self.ui.right_column_frame, b"minimumWidth")
         self.right_box.setDuration(time_animation)
         self.right_box.setStartValue(right_box_width)

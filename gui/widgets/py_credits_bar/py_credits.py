@@ -16,7 +16,13 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QWidget
+from qt_core import QHBoxLayout
+from qt_core import QFrame
+from qt_core import QLabel
+from qt_core import QSpacerItem
+from qt_core import QSizePolicy
+from qt_core import Qt
 
 
 # PY CREDITS BAR AND VERSION
@@ -42,7 +48,7 @@ class PyCredits(QWidget):
     def setup_ui(self):
         # ADD LAYOUT
         self.widget_layout = QHBoxLayout(self)
-        self.widget_layout.setContentsMargins(0,0,0,0)
+        self.widget_layout.setContentsMargins(0, 0, 0, 0)
 
         # BG STYLE
         style = f"""
@@ -68,7 +74,7 @@ class PyCredits(QWidget):
 
         # ADD BG LAYOUT
         self.bg_layout = QHBoxLayout(self.bg_frame)
-        self.bg_layout.setContentsMargins(0,0,0,0)
+        self.bg_layout.setContentsMargins(0, 0, 0, 0)
 
         # ADD COPYRIGHT TEXT
         self.copyright_label = QLabel(self._copyright)

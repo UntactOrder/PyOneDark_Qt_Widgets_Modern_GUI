@@ -16,7 +16,15 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QVBoxLayout
+from qt_core import QStackedWidget
+from qt_core import QWidget
+from qt_core import QSize
+from qt_core import QLabel
+from qt_core import QFont
+from qt_core import Qt
+from qt_core import QMetaObject
+from qt_core import QCoreApplication
 
 
 class Ui_LeftColumn(object):
@@ -120,11 +128,9 @@ class Ui_LeftColumn(object):
 
         self.main_pages_layout.addWidget(self.menus)
 
-
         self.retranslateUi(LeftColumn)
 
         self.menus.setCurrentIndex(0)
-
 
         QMetaObject.connectSlotsByName(LeftColumn)
     # setupUi
@@ -133,7 +139,8 @@ class Ui_LeftColumn(object):
         LeftColumn.setWindowTitle(QCoreApplication.translate("LeftColumn", u"Form", None))
         self.label_1.setText(QCoreApplication.translate("LeftColumn", u"Menu 1 - Left Menu", None))
         self.label_2.setText(QCoreApplication.translate("LeftColumn", u"Menu 2 - Left Menu", None))
-        self.label_3.setText(QCoreApplication.translate("LeftColumn", u"This is just an example menu.\n"
-"Add Qt Widgets or your custom widgets here.", None))
+        self.label_3.setText(QCoreApplication.translate(
+            "LeftColumn", u"This is just an example menu.\n"
+            "Add Qt Widgets or your custom widgets here.", None
+        ))
     # retranslateUi
-

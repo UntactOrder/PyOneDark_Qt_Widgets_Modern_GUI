@@ -16,36 +16,33 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QGraphicsDropShadowEffect
+from qt_core import QPushButton
+from qt_core import QPainter
+from qt_core import QBrush
+from qt_core import QRect
+from qt_core import QColor
+from qt_core import QEvent
+from qt_core import QLabel
+from qt_core import QPoint
+from qt_core import QPixmap
+from qt_core import Qt
+
 
 # PY TITLE BUTTON
 # ///////////////////////////////////////////////////////////////
 class PyIconButton(QPushButton):
     def __init__(
-        self,
-        icon_path = None,
-        parent = None,
-        app_parent = None,
-        tooltip_text = "",
-        btn_id = None,
-        width = 30,
-        height = 30,
-        radius = 8,
-        bg_color = "#343b48",
-        bg_color_hover = "#3c4454",
-        bg_color_pressed = "#2c313c",
-        icon_color = "#c3ccdf",
-        icon_color_hover = "#dce1ec",
-        icon_color_pressed = "#edf0f5",
-        icon_color_active = "#f5f6f9",
-        dark_one = "#1b1e23",
-        text_foreground = "#8a95aa",
-        context_color = "#568af2",
-        top_margin = 40,
-        is_active = False
+        self, icon_path=None, parent=None, app_parent=None, tooltip_text="",
+        btn_id=None, width=30, height=30, radius=8,
+        bg_color="#343b48", bg_color_hover="#3c4454", bg_color_pressed="#2c313c",
+        icon_color="#c3ccdf", icon_color_hover="#dce1ec",
+        icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
+        dark_one="#1b1e23", text_foreground="#8a95aa", context_color="#568af2",
+        top_margin=40, is_active=False
     ):
         super().__init__()
-        
+
         # SET DEFAULT PARAMETERS
         self.setFixedSize(width, height)
         self.setCursor(Qt.PointingHandCursor)
@@ -54,7 +51,7 @@ class PyIconButton(QPushButton):
         # PROPERTIES
         self._bg_color = bg_color
         self._bg_color_hover = bg_color_hover
-        self._bg_color_pressed = bg_color_pressed        
+        self._bg_color_pressed = bg_color_pressed
         self._icon_color = icon_color
         self._icon_color_hover = icon_color_hover
         self._icon_color_pressed = icon_color_pressed
@@ -100,7 +97,7 @@ class PyIconButton(QPushButton):
         paint = QPainter()
         paint.begin(self)
         paint.setRenderHint(QPainter.RenderHint.Antialiasing)
-        
+
         if self._is_active:
             # BRUSH
             brush = QBrush(QColor(self._context_color))
@@ -113,8 +110,8 @@ class PyIconButton(QPushButton):
         paint.setPen(Qt.NoPen)
         paint.setBrush(brush)
         paint.drawRoundedRect(
-            rect, 
-            self._set_border_radius, 
+            rect,
+            self._set_border_radius,
             self._set_border_radius
         )
 
@@ -131,12 +128,12 @@ class PyIconButton(QPushButton):
         if event == QEvent.Enter:
             self._set_bg_color = self._bg_color_hover
             self._set_icon_color = self._icon_color_hover
-            self.repaint()         
+            self.repaint()
         elif event == QEvent.Leave:
             self._set_bg_color = self._bg_color
             self._set_icon_color = self._icon_color
             self.repaint()
-        elif event == QEvent.MouseButtonPress:            
+        elif event == QEvent.MouseButtonPress:
             self._set_bg_color = self._bg_color_pressed
             self._set_icon_color = self._icon_color_pressed
             self.repaint()
@@ -192,10 +189,10 @@ class PyIconButton(QPushButton):
         else:
             painter.fillRect(icon.rect(), self._set_icon_color)
         qp.drawPixmap(
-            (rect.width() - icon.width()) / 2, 
+            (rect.width() - icon.width()) / 2,
             (rect.height() - icon.height()) / 2,
             icon
-        )        
+        )
         painter.end()
 
     # SET ICON
@@ -223,13 +220,14 @@ class PyIconButton(QPushButton):
         # Move tooltip position
         self._tooltip.move(pos_x, pos_y)
 
+
 # TOOLTIP
 # ///////////////////////////////////////////////////////////////
 class _ToolTip(QLabel):
     # TOOLTIP / LABEL StyleSheet
-    style_tooltip = """ 
-    QLabel {{		
-        background-color: {_dark_one};	
+    style_tooltip = """
+    QLabel {{
+        background-color: {_dark_one};
         color: {_text_foreground};
         padding-left: 10px;
         padding-right: 10px;
@@ -238,19 +236,14 @@ class _ToolTip(QLabel):
         font: 800 9pt "Segoe UI";
     }}
     """
-    def __init__(
-        self,
-        parent, 
-        tooltip,
-        dark_one,
-        text_foreground
-    ):
+
+    def __init__(self, parent, tooltip, dark_one, text_foreground):
         QLabel.__init__(self)
 
         # LABEL SETUP
         style = self.style_tooltip.format(
-            _dark_one = dark_one,
-            _text_foreground = text_foreground
+            _dark_one=dark_one,
+            _text_foreground=text_foreground
         )
         self.setObjectName(u"label_tooltip")
         self.setStyleSheet(style)
