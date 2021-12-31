@@ -18,20 +18,12 @@
 # ///////////////////////////////////////////////////////////////
 from qt_core import *
 
+
 # PY CREDITS BAR AND VERSION
 # ///////////////////////////////////////////////////////////////
 class PyCredits(QWidget):
-    def __init__(
-        self,
-        copyright,
-        version,
-        bg_two,
-        font_family,
-        text_size,
-        text_description_color,
-        radius = 8,
-        padding = 10
-    ):
+    def __init__(self, copyright, version, bg_two, font_family, text_size,
+                 text_description_color, radius=8, padding=10):
         super().__init__()
 
         # PROPERTIES

@@ -157,11 +157,9 @@ class Ui_MainPages(object):
 
         self.main_pages_layout.addWidget(self.pages)
 
-
         self.retranslateUi(MainPages)
 
         self.pages.setCurrentIndex(0)
-
 
         QMetaObject.connectSlotsByName(MainPages)
     # setupUi
@@ -174,4 +172,3 @@ class Ui_MainPages(object):
 "I will try to always record a new tutorial when adding a new Widget and updating the project on Patreon before launching on GitHub and GitHub after the public release.", None))
         self.empty_page_label.setText(QCoreApplication.translate("MainPages", u"Empty Page", None))
     # retranslateUi
-

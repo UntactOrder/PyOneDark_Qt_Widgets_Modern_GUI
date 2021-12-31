@@ -40,8 +40,8 @@ from gui.widgets import *
 # ADJUST QT FONT DPI FOR HIGHT SCALE AN 4K MONITOR
 # ///////////////////////////////////////////////////////////////
 os.environ["QT_FONT_DPI"] = "96"
-# IF IS 4K MONITOR ENABLE
-os.environ["QT_SCALE_FACTOR"] = "2"
+# IF IS 4K MONITOR ENABLE 'os.environ["QT_SCALE_FACTOR"] = "2"''
+
 
 # MAIN WINDOW
 # ///////////////////////////////////////////////////////////////
@@ -62,7 +62,7 @@ class MainWindow(QMainWindow):
 
         # SETUP MAIN WINDOW
         # ///////////////////////////////////////////////////////////////
-        self.hide_grips = True # Show/Hide resize grips
+        self.hide_grips = True  # Show/Hide resize grips
         SetupMainWindow.setup_gui(self)
 
         # SHOW MAIN WINDOW

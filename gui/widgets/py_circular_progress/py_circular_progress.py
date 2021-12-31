@@ -18,22 +18,12 @@
 # ///////////////////////////////////////////////////////////////
 from qt_core import *
 
+
 class PyCircularProgress(QWidget):
-    def __init__(
-        self,
-        value = 0,
-        progress_width = 10,
-        is_rounded = True,
-        max_value = 100,
-        progress_color = "#ff79c6",
-        enable_text = True,
-        font_family = "Segoe UI",
-        font_size = 12,
-        suffix = "%",
-        text_color = "#ff79c6",
-        enable_bg = True,
-        bg_color = "#44475a"
-    ):
+    def __init__(self, value=0, progress_width=10, is_rounded=True,
+                 max_value=100, progress_color="#ff79c6", enable_text=True,
+                 font_family="Segoe UI", font_size=12, suffix="%",
+                 text_color="#ff79c6", enable_bg=True, bg_color="#44475a"):
         QWidget.__init__(self)
 
         # CUSTOM PROPERTIES
@@ -65,8 +55,7 @@ class PyCircularProgress(QWidget):
     # SET VALUE
     def set_value(self, value):
         self.value = value
-        self.repaint() # Render progress bar after change value
-
+        self.repaint()  # Render progress bar after change value
 
     # PAINT EVENT (DESIGN YOUR CIRCULAR PROGRESS HERE)
     def paintEvent(self, e):
@@ -74,7 +63,7 @@ class PyCircularProgress(QWidget):
         width = self.width() - self.progress_width
         height = self.height() - self.progress_width
         margin = self.progress_width / 2
-        value =  self.value * 360 / self.max_value
+        value = self.value * 360 / self.max_value
 
         # PAINTER
         paint = QPainter()
@@ -87,7 +76,7 @@ class PyCircularProgress(QWidget):
         paint.setPen(Qt.NoPen)
 
         # PEN
-        pen = QPen()             
+        pen = QPen()
         pen.setWidth(self.progress_width)
         # Set Round Cap
         if self.progress_rounded_cap:
@@ -96,13 +85,13 @@ class PyCircularProgress(QWidget):
         # ENABLE BG
         if self.enable_bg:
             pen.setColor(QColor(self.bg_color))
-            paint.setPen(pen)  
-            paint.drawArc(margin, margin, width, height, 0, 360 * 16) 
+            paint.setPen(pen)
+            paint.drawArc(margin, margin, width, height, 0, 360 * 16)
 
         # CREATE ARC / CIRCULAR PROGRESS
         pen.setColor(QColor(self.progress_color))
-        paint.setPen(pen)      
-        paint.drawArc(margin, margin, width, height, -90 * 16, -value * 16)       
+        paint.setPen(pen)
+        paint.drawArc(margin, margin, width, height, -90 * 16, -value * 16)
 
         # CREATE TEXT
         if self.enable_text:
