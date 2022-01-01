@@ -8,7 +8,7 @@ if __name__ == "__main__":
     os.system("TITLE cx_Freeze builder")
 
     version = input("1. 컴퓨터 기본 파이썬 버전(python)\n2. 파이썬 3.8.10(python3.8, Windows 7용)\n빌드에 사용할 파이썬 버전을 선택하세요. : ")
-    py = "python"
+    py = "python3"
     if version == "2":
         py = "python3.8"
         print("\n\nWindows 7 호환성을 위해 Pyside버전을 2버전으로 변경합니다. 스크립트가 정상 종료되지 못한 경우 수동으로 qt_core.py 파일을 원래대로 되돌려주세요.\n\n")
