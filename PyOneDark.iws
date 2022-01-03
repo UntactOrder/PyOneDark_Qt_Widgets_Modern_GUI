@@ -1,11 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1e5af1a-0581-4de5-a34e-579e2e3a31a6" name="변경" comment="" />
+    <list default="true" id="d1e5af1a-0581-4de5-a34e-579e2e3a31a6" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/PyOneDark.iws" beforeDir="false" afterPath="$PROJECT_DIR$/PyOneDark.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/build.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/core/functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/core/json_settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/core/json_themes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/active_menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_add_user.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_arrow_left.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_arrow_right.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_attachment.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_busy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_emoticons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_file.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_folder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_folder_open.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_heart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_idle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_info.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_invisible.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_maximize.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_menu_close.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_minimize.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_more_options.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_online.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_restore.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_save.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_send.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_settings.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_signal.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/icon_widgets.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_icons/no_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_images/logo_home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/images/svg_images/logo_top_100x22.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/themes/bright_theme.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/themes/default.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/themes/dracula.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/columns/left_column.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/columns/right_column.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/columns/ui_left_column.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/columns/ui_right_column.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/pages/main_pages.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/pages/ui_main_pages.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/windows/main_window/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/windows/main_window/functions_main_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/windows/main_window/setup_main_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/uis/windows/main_window/ui_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_circular_progress/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_circular_progress/py_circular_progress.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_credits_bar/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_credits_bar/py_credits.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_grips/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_grips/py_grips.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_icon_button/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_icon_button/py_icon_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_column/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_column/py_icon.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_column/py_left_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_column/py_left_column.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_menu/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_menu/py_div.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_menu/py_left_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_left_menu/py_left_menu_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_line_edit/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_line_edit/py_line_edit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_push_button/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_push_button/py_push_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_slider/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_slider/py_slider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_table_widget/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_table_widget/py_table_widget.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_table_widget/style.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_title_bar/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_title_bar/py_div.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_title_bar/py_title_bar.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_title_bar/py_title_button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_toggle/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_toggle/py_toggle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_window/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_window/py_window.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/widgets/py_window/styles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.pyw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qt_core.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -25,8 +118,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="trusted.hosts" />
   </component>
-  <component name="RunManager">
-    <configuration name="main.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\IRACK\Desktop\PyOneDark_Qt_Widgets_Modern_GUI" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.build">
+    <configuration name="build" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyOneDark_Qt_Widgets_Modern_GUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -39,7 +137,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.pyw" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/build.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -48,8 +146,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyOneDark_Qt_Widgets_Modern_GUI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files\Python310\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/main.pyw" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main.pyw" />
+      <item itemvalue="Python.build" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.build" />
         <item itemvalue="Python.main.pyw" />
       </list>
     </recent_temporary>
@@ -63,7 +188,15 @@
       <option name="presentableId" value="Default" />
       <updated>1641189998355</updated>
       <workItem from="1641190001248" duration="2000" />
+      <workItem from="1641200824744" duration="3614000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PyOneDark$build.coverage" NAME="build 커버리지 결과" MODIFIED="1641207880944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyOneDark$main_pyw.coverage" NAME="main.pyw 커버리지 결과" MODIFIED="1641203536066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
