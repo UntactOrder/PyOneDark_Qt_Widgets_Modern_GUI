@@ -10,8 +10,8 @@ import platform
 if __name__ == "__main__":
     if platform.system() == "Windows":
         os.system("TITLE cx_Freeze builder")
-    else:
-        raise Exception("cx_Freeze supports only Windows OS.")
+    elif platform.system() == "Linux":
+        os.system("sudo apt-get install patchelf")
 
     py_version = sys.version.split(" ")[0].split(".")
     if int(py_version[0]) < 3 or int(py_version[1]) < 8 or (int(py_version[1]) == 8 and int(py_version[2]) < 10):
