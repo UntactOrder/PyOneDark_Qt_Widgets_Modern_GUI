@@ -33,22 +33,21 @@ from qt_core import Qt
 
 # IMPORT FUNCTIONS
 # ///////////////////////////////////////////////////////////////
-from gui.core.functions import Functions
+from gui.core.functions import set_svg_icon
 
 
 # CUSTOM LEFT MENU
 # ///////////////////////////////////////////////////////////////
 class PyLeftMenuButton(QPushButton):
-    def __init__(
-        self, app_parent, text, btn_id=None, tooltip_text="", margin=4,
-        dark_one="#1b1e23", dark_three="#21252d", dark_four="#272c36",
-        bg_one="#2c313c", icon_color="#c3ccdf", icon_color_hover="#dce1ec",
-        icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
-        context_color="#568af2", text_foreground="#8a95aa",
-        text_active="#dce1ec",
-        icon_path="icon_add_user.svg", icon_active_menu="active_menu.svg",
-        is_active=False, is_active_tab=False, is_toggle_active=False
-    ):
+    def __init__(self, app_parent, text, btn_id=None, tooltip_text="", margin=4,
+                 dark_one="#1b1e23", dark_three="#21252d", dark_four="#272c36",
+                 bg_one="#2c313c", icon_color="#c3ccdf", icon_color_hover="#dce1ec",
+                 icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
+                 context_color="#568af2", text_foreground="#8a95aa",
+                 text_active="#dce1ec",
+                 icon_path="icon_add_user.svg", icon_active_menu="active_menu.svg",
+                 is_active=False, is_active_tab=False, is_toggle_active=False
+                 ):
         super().__init__()
         self.setText(text)
         self.setCursor(Qt.PointingHandCursor)
@@ -57,8 +56,8 @@ class PyLeftMenuButton(QPushButton):
         self.setObjectName(btn_id)
 
         # APP PATH
-        self._icon_path = Functions.set_svg_icon(icon_path)
-        self._icon_active_menu = Functions.set_svg_icon(icon_active_menu)
+        self._icon_path = set_svg_icon(icon_path)
+        self._icon_active_menu = set_svg_icon(icon_active_menu)
 
         # PROPERTIES
         self._margin = margin
@@ -361,7 +360,7 @@ class _ToolTip(QLabel):
 
         # SET DROP SHADOW
         self.shadow = QGraphicsDropShadowEffect(self)
-        self.shadow.setBlurRadius(30)
+        self.shadow.setBlurRadius(56)
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 80))

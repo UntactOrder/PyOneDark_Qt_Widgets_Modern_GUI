@@ -26,13 +26,12 @@ from .style import style
 # PY PUSH BUTTON
 # ///////////////////////////////////////////////////////////////
 class PyTableWidget(QTableWidget):
-    def __init__(
-        self, radius=8, color="#FFF", bg_color="#444", selection_color="#FFF",
-        header_horizontal_color="#333", header_vertical_color="#444",
-        bottom_line_color="#555", grid_line_color="#555",
-        scroll_bar_bg_color="#FFF", scroll_bar_btn_color="#3333",
-        context_color="#00ABE8"
-    ):
+    def __init__(self, radius=8, color="#FFF", bg_color="#444", selection_color="#FFF",
+                 header_horizontal_color="#333", header_vertical_color="#444",
+                 bottom_line_color="#555", grid_line_color="#555",
+                 scroll_bar_bg_color="#FFF", scroll_bar_btn_color="#3333",
+                 context_color="#00ABE8"
+                 ):
         super().__init__()
 
         # PARAMETERS

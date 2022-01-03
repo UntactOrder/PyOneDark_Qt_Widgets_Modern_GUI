@@ -16,33 +16,30 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
-from qt_core import *
+from qt_core import QPushButton
+from qt_core import Qt
+from qt_core import QPainter
+from qt_core import QBrush
+from qt_core import QColor
+from qt_core import QRect
+from qt_core import QEvent
+from qt_core import QPixmap
+from qt_core import QLabel
+from qt_core import QPoint
+from qt_core import QGraphicsDropShadowEffect
+
 
 # PY TITLE BUTTON
 # ///////////////////////////////////////////////////////////////
 class PyTitleButton(QPushButton):
-    def __init__(
-        self,
-        parent,
-        app_parent = None,
-        tooltip_text = "",
-        btn_id = None,
-        width = 30,
-        height = 30,
-        radius = 8,
-        bg_color = "#343b48",
-        bg_color_hover = "#3c4454",
-        bg_color_pressed = "#2c313c",
-        icon_color = "#c3ccdf",
-        icon_color_hover = "#dce1ec",
-        icon_color_pressed = "#edf0f5",
-        icon_color_active = "#f5f6f9",
-        icon_path = "no_icon.svg",
-        dark_one = "#1b1e23",
-        context_color = "#568af2",
-        text_foreground = "#8a95aa",
-        is_active = False
-    ):
+    def __init__(self, parent, app_parent=None, tooltip_text="", btn_id=None,
+                 width=30, height=30, radius=8,
+                 bg_color="#343b48", bg_color_hover="#3c4454", bg_color_pressed="#2c313c",
+                 icon_color="#c3ccdf", icon_color_hover="#dce1ec", icon_color_pressed="#edf0f5",
+                 icon_color_active="#f5f6f9", icon_path="no_icon.svg",
+                 dark_one="#1b1e23", context_color="#568af2",
+                 text_foreground="#8a95aa", is_active=False
+                 ):
         super().__init__()
         
         # SET DEFAULT PARAMETERS
@@ -72,13 +69,7 @@ class PyTitleButton(QPushButton):
 
         # TOOLTIP
         self._tooltip_text = tooltip_text
-        self._tooltip = _ToolTip(
-            app_parent,
-            tooltip_text,
-            dark_one,
-            context_color,
-            text_foreground
-        )
+        self._tooltip = _ToolTip(app_parent, tooltip_text, dark_one, context_color, text_foreground)
         self._tooltip.hide()
 
     # SET ACTIVE MENU
@@ -158,7 +149,7 @@ class PyTitleButton(QPushButton):
     # ///////////////////////////////////////////////////////////////
     def leaveEvent(self, event):
         self.change_style(QEvent.Leave)
-        self.move_tooltip()
+        #self.move_tooltip()
         self._tooltip.hide()
 
     # MOUSE PRESS
@@ -223,6 +214,7 @@ class PyTitleButton(QPushButton):
         # Move tooltip position
         self._tooltip.move(pos_x, pos_y)
 
+
 # TOOLTIP
 # ///////////////////////////////////////////////////////////////
 class _ToolTip(QLabel):
@@ -239,21 +231,15 @@ class _ToolTip(QLabel):
         font: 800 9pt "Segoe UI";
     }}
     """
-    def __init__(
-        self,
-        parent, 
-        tooltip,
-        dark_one,
-        context_color,
-        text_foreground
-    ):
+
+    def __init__(self, parent, tooltip, dark_one, context_color, text_foreground):
         QLabel.__init__(self)
 
         # LABEL SETUP
         style = self.style_tooltip.format(
-            _dark_one = dark_one,
-            _context_color = context_color,
-            _text_foreground = text_foreground
+            _dark_one=dark_one,
+            _context_color=context_color,
+            _text_foreground=text_foreground
         )
         self.setObjectName(u"label_tooltip")
         self.setStyleSheet(style)
@@ -264,7 +250,7 @@ class _ToolTip(QLabel):
 
         # SET DROP SHADOW
         self.shadow = QGraphicsDropShadowEffect(self)
-        self.shadow.setBlurRadius(30)
+        self.shadow.setBlurRadius(54)
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 80))

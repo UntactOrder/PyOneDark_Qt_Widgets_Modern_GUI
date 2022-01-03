@@ -27,17 +27,17 @@ from qt_core import QParallelAnimationGroup
 
 # LOAD UI MAIN
 # ///////////////////////////////////////////////////////////////
-from .ui_main import UI_MainWindow
+from .ui_main import UiMainWindow
 
 
 # FUNCTIONS
-class MainFunctions():
+class MainFunctions(object):
     def __init__(self):
         super().__init__()
         # SETUP MAIN WINDOw
         # Load widgets from "gui\uis\main_window\ui_main.py"
         # ///////////////////////////////////////////////////////////////
-        self.ui = UI_MainWindow()
+        self.ui = UiMainWindow()
         self.ui.setup_ui(self)
 
     # SET MAIN WINDOW PAGES
@@ -47,12 +47,7 @@ class MainFunctions():
 
     # SET LEFT COLUMN PAGES
     # ///////////////////////////////////////////////////////////////
-    def set_left_column_menu(
-        self,
-        menu,
-        title,
-        icon_path
-    ):
+    def set_left_column_menu(self, menu, title, icon_path):
         self.ui.left_column.menus.menus.setCurrentWidget(menu)
         self.ui.left_column.title_label.setText(title)
         self.ui.left_column.icon.set_icon(icon_path)

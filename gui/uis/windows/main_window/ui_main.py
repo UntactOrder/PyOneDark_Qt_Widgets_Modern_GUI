@@ -16,7 +16,7 @@
 
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
-from gui.core.functions import Functions
+from gui.core.functions import set_svg_icon
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -46,11 +46,11 @@ from gui.widgets import PyTitleBar
 
 # IMPORT MAIN WINDOW PAGES / AND SIDE BOXES FOR APP
 # ///////////////////////////////////////////////////////////////
-from gui.uis.pages.ui_main_pages import Ui_MainPages
+from gui.uis.pages.ui_main_pages import UiMainPages
 
 # RIGHT COLUMN
 # ///////////////////////////////////////////////////////////////
-from gui.uis.columns.ui_right_column import Ui_RightColumn
+from gui.uis.columns.ui_right_column import UiRightColumn
 
 # CREDITS
 # ///////////////////////////////////////////////////////////////
@@ -59,7 +59,7 @@ from gui.widgets.py_credits_bar.py_credits import PyCredits
 
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
-class UI_MainWindow(object):
+class UiMainWindow(object):
     def setup_ui(self, parent):
         if not parent.objectName():
             parent.setObjectName("MainWindow")
@@ -166,7 +166,7 @@ class UI_MainWindow(object):
             text_title="Settings Left Frame",
             text_title_size=self.settings["font"]["title_size"],
             text_title_color=self.themes['app_color']['text_foreground'],
-            icon_path=Functions.set_svg_icon("icon_settings.svg"),
+            icon_path=set_svg_icon("icon_settings.svg"),
             dark_one=self.themes['app_color']['dark_one'],
             bg_color=self.themes['app_color']['bg_three'],
             btn_color=self.themes['app_color']['bg_three'],
@@ -176,7 +176,7 @@ class UI_MainWindow(object):
             icon_color_hover=self.themes['app_color']['icon_hover'],
             context_color=self.themes['app_color']['context_color'],
             icon_color_pressed=self.themes['app_color']['icon_pressed'],
-            icon_close_path=Functions.set_svg_icon("icon_close.svg")
+            icon_close_path=set_svg_icon("icon_close.svg")
         )
         self.left_column_layout.addWidget(self.left_column)
 
@@ -236,7 +236,7 @@ class UI_MainWindow(object):
         self.content_area_left_frame = QFrame()
 
         # IMPORT MAIN PAGES TO CONTENT AREA
-        self.load_pages = Ui_MainPages()
+        self.load_pages = UiMainPages()
         self.load_pages.setupUi(self.content_area_left_frame)
 
         # RIGHT BAR
@@ -264,7 +264,7 @@ class UI_MainWindow(object):
         self.content_area_right_layout.addWidget(self.content_area_right_bg_frame)
 
         # ADD RIGHT PAGES TO RIGHT COLUMN
-        self.right_column = Ui_RightColumn()
+        self.right_column = UiRightColumn()
         self.right_column.setupUi(self.content_area_right_bg_frame)
 
         # ADD TO LAYOUTS

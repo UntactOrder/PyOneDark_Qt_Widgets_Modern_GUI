@@ -27,7 +27,7 @@ from qt_core import QMetaObject
 from qt_core import QCoreApplication
 
 
-class Ui_RightColumn(object):
+class UiRightColumn(object):
     def setupUi(self, RightColumn):
         if not RightColumn.objectName():
             RightColumn.setObjectName(u"RightColumn")

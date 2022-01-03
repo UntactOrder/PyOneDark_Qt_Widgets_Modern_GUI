@@ -16,9 +16,10 @@
 
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
-from gui.uis.windows.main_window.functions_main_window import MainFunctions
-import sys
 import os
+import sys
+from gui.core.functions import set_svg_icon
+from gui.uis.windows.main_window.functions_main_window import MainFunctions
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -34,8 +35,7 @@ from gui.core.json_settings import Settings
 # IMPORT PY ONE DARK WINDOWS
 # ///////////////////////////////////////////////////////////////
 # MAIN WINDOW
-from gui.uis.windows.main_window import UI_MainWindow
-from gui.uis.windows.main_window import Functions
+from gui.uis.windows.main_window import UiMainWindow
 from gui.uis.windows.main_window import SetupMainWindow
 
 # IMPORT PY ONE DARK WIDGETS
@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):
         # SETUP MAIN WINDOw
         # Load widgets from "gui\uis\main_window\ui_main.py"
         # ///////////////////////////////////////////////////////////////
-        self.ui = UI_MainWindow()
+        self.ui = UiMainWindow()
         self.ui.setup_ui(self)
 
         # LOAD SETTINGS
@@ -140,7 +140,7 @@ class MainWindow(QMainWindow):
                     self,
                     menu=self.ui.left_column.menus.menu_2,
                     title="Info tab",
-                    icon_path=Functions.set_svg_icon("icon_info.svg")
+                    icon_path=set_svg_icon("icon_info.svg")
                 )
 
         # SETTINGS LEFT
@@ -163,7 +163,7 @@ class MainWindow(QMainWindow):
                     self,
                     menu=self.ui.left_column.menus.menu_1,
                     title="Settings Left Column",
-                    icon_path=Functions.set_svg_icon("icon_settings.svg")
+                    icon_path=set_svg_icon("icon_settings.svg")
                 )
 
         # TITLE BAR MENU

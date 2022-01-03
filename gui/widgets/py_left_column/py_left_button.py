@@ -32,16 +32,15 @@ from qt_core import Qt
 # PY TITLE BUTTON
 # ///////////////////////////////////////////////////////////////
 class PyLeftButton(QPushButton):
-    def __init__(
-        self, parent, app_parent=None, tooltip_text="", btn_id=None,
-        width=30, height=30, radius=8, bg_color="#343b48",
-        bg_color_hover="#3c4454", bg_color_pressed="#2c313c",
-        icon_color="#c3ccdf", icon_color_hover="#dce1ec",
-        icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
-        icon_path="no_icon.svg",
-        dark_one="#1b1e23", context_color="#568af2",
-        text_foreground="#8a95aa", is_active=False
-    ):
+    def __init__(self, parent, app_parent=None, tooltip_text="", btn_id=None,
+                 width=30, height=30, radius=8, bg_color="#343b48",
+                 bg_color_hover="#3c4454", bg_color_pressed="#2c313c",
+                 icon_color="#c3ccdf", icon_color_hover="#dce1ec",
+                 icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
+                 icon_path="no_icon.svg",
+                 dark_one="#1b1e23", context_color="#568af2",
+                 text_foreground="#8a95aa", is_active=False
+                 ):
         super().__init__()
 
         # SET DEFAULT PARAMETERS
@@ -157,7 +156,7 @@ class PyLeftButton(QPushButton):
     # ///////////////////////////////////////////////////////////////
     def leaveEvent(self, event):
         self.change_style(QEvent.Leave)
-        self.move_tooltip()
+        #self.move_tooltip()
         self._tooltip.hide()
 
     # MOUSE PRESS
@@ -258,7 +257,7 @@ class _ToolTip(QLabel):
 
         # SET DROP SHADOW
         self.shadow = QGraphicsDropShadowEffect(self)
-        self.shadow.setBlurRadius(30)
+        self.shadow.setBlurRadius(200)
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
         self.shadow.setColor(QColor(0, 0, 0, 80))

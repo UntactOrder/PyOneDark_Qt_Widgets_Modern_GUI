@@ -16,7 +16,9 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
+from qt_core import QGraphicsDropShadowEffect
 from qt_core import QPropertyAnimation
+from qt_core import QColor
 from qt_core import QWidget
 from qt_core import Signal
 from qt_core import QVBoxLayout
@@ -32,27 +34,28 @@ from .py_div import PyDiv
 
 # IMPORT FUNCTIONS
 # ///////////////////////////////////////////////////////////////
-from gui.core.functions import Functions
+from gui.core.functions import set_svg_icon
 
 
 # PY LEFT MENU
 # ///////////////////////////////////////////////////////////////
 class PyLeftMenu(QWidget):
+    """왼쪽 확장형 메뉴 클래스"""
+
     # SIGNALS
     clicked = Signal(object)
     released = Signal(object)
 
-    def __init__(
-        self, parent=None, app_parent=None,
-        dark_one="#1b1e23", dark_three="#21252d", dark_four="#272c36",
-        bg_one="#2c313c", icon_color="#c3ccdf", icon_color_hover="#dce1ec",
-        icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
-        context_color="#568af2", text_foreground="#8a95aa",
-        text_active="#dce1ec", duration_time=500,
-        radius=8, minimum_width=50, maximum_width=240,
-        icon_path="icon_menu.svg", icon_path_close="icon_menu_close.svg",
-        toggle_text="Hide Menu", toggle_tooltip="Show menu"
-    ):
+    def __init__(self, parent=None, app_parent=None,
+                 dark_one="#1b1e23", dark_three="#21252d", dark_four="#272c36",
+                 bg_one="#2c313c", icon_color="#c3ccdf", icon_color_hover="#dce1ec",
+                 icon_color_pressed="#edf0f5", icon_color_active="#f5f6f9",
+                 context_color="#568af2", text_foreground="#8a95aa",
+                 text_active="#dce1ec", duration_time=500,
+                 radius=8, minimum_width=50, maximum_width=240,
+                 icon_path="icon_menu.svg", icon_path_close="icon_menu_close.svg",
+                 toggle_text="Hide Menu", toggle_tooltip="Show menu"
+                 ):
         super().__init__()
 
         # PROPERTIES
@@ -72,8 +75,8 @@ class PyLeftMenu(QWidget):
         self._radius = radius
         self._minimum_width = minimum_width
         self._maximum_width = maximum_width
-        self._icon_path = Functions.set_svg_icon(icon_path)
-        self._icon_path_close = Functions.set_svg_icon(icon_path_close)
+        self._icon_path = set_svg_icon(icon_path)
+        self._icon_path_close = set_svg_icon(icon_path_close)
 
         # SET PARENT
         self._parent = parent
@@ -217,6 +220,14 @@ class PyLeftMenu(QWidget):
 
         # ADD BG
         self.bg = QFrame()
+
+        # SET DROP SHADOW
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(100)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 0))
+        self.setGraphicsEffect(self.shadow)
 
         # TOP FRAME
         self.top_frame = QFrame()

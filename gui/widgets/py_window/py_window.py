@@ -37,12 +37,12 @@ from .styles import Styles
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
 class PyWindow(QFrame):
-    def __init__(
-        self, parent, layout=Qt.Vertical, margin=0, spacing=2,
-        bg_color="#2c313c", text_color="#fff", text_font="9pt 'Segoe UI'",
-        border_radius=10, border_size=2, border_color="#343b48",
-        enable_shadow=True
-    ):
+    """메인 윈도우의 배경이 되는 프레임"""
+    def __init__(self, parent, layout=Qt.Vertical, margin=6, spacing=2,
+                 bg_color="#2c313c", text_color="#fff", text_font="9pt 'Segoe UI'",
+                 border_radius=10, border_size=2, border_color="#343b48",
+                 enable_shadow=True
+                 ):
         super().__init__()
 
         # LOAD SETTINGS

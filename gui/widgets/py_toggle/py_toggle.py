@@ -29,14 +29,8 @@ from qt_core import Qt
 
 
 class PyToggle(QCheckBox):
-    def __init__(
-        self,
-        width=50,
-        bg_color="#777",
-        circle_color="#DDD",
-        active_color="#00BCFF",
-        animation_curve=QEasingCurve.OutBounce
-    ):
+    def __init__(self, width=50, bg_color="#777", circle_color="#DDD", active_color="#00BCFF",
+                 animation_curve=QEasingCurve.OutBounce):
         QCheckBox.__init__(self)
         self.setFixedSize(width, 28)
         self.setCursor(Qt.PointingHandCursor)

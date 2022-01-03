@@ -16,6 +16,8 @@
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
+from qt_core import QGraphicsDropShadowEffect
+from qt_core import QColor
 from qt_core import QWidget
 from qt_core import Signal
 from qt_core import QVBoxLayout
@@ -34,20 +36,21 @@ from .py_icon import PyIcon
 
 # IMPORT LEFT COLUMN
 # ///////////////////////////////////////////////////////////////
-from gui.uis.columns.ui_left_column import Ui_LeftColumn
+from gui.uis.columns.ui_left_column import UiLeftColumn
 
 
 class PyLeftColumn(QWidget):
+    """왼쪽 설정 버튼이나 정보 버튼 누를 시 나오는 칼럼"""
+
     # SIGNALS
     clicked = Signal(object)
     released = Signal(object)
 
-    def __init__(
-        self, parent, app_parent, text_title, text_title_size, text_title_color,
-        dark_one, bg_color, btn_color, btn_color_hover, btn_color_pressed,
-        icon_path, icon_color, icon_color_hover, icon_color_pressed,
-        context_color, icon_close_path, radius=8
-    ):
+    def __init__(self, parent, app_parent, text_title, text_title_size, text_title_color,
+                 dark_one, bg_color, btn_color, btn_color_hover, btn_color_pressed,
+                 icon_path, icon_color, icon_color_hover, icon_color_pressed,
+                 context_color, icon_close_path, radius=8
+                 ):
         super().__init__()
 
         # PARAMETERS
@@ -73,7 +76,7 @@ class PyLeftColumn(QWidget):
         self.setup_ui()
 
         # ADD LEFT COLUMN TO BG FRAME
-        self.menus = Ui_LeftColumn()
+        self.menus = UiLeftColumn()
         self.menus.setupUi(self.content_frame)
 
         # CONNECT SIGNALS
@@ -120,6 +123,14 @@ class PyLeftColumn(QWidget):
         self.title_bg_layout = QHBoxLayout(self.title_bg_frame)
         self.title_bg_layout.setContentsMargins(5, 5, 5, 5)
         self.title_bg_layout.setSpacing(3)
+
+        # SET DROP SHADOW
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(100)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 80))
+        self.setGraphicsEffect(self.shadow)
 
         # ICON
         self.icon_frame = QFrame()

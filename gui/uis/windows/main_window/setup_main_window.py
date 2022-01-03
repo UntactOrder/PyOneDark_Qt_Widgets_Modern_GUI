@@ -17,6 +17,8 @@
 # IMPORT PACKAGES AND MODULES
 # ///////////////////////////////////////////////////////////////
 from gui.widgets.py_table_widget.py_table_widget import PyTableWidget
+from gui.core.functions import set_svg_icon
+from gui.core.functions import set_svg_image
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -48,8 +50,7 @@ from gui.widgets import PyToggle
 
 # LOAD UI MAIN
 # ///////////////////////////////////////////////////////////////
-from .ui_main import UI_MainWindow
-from .ui_main import Functions
+from .ui_main import UiMainWindow
 
 # MAIN FUNCTIONS
 # ///////////////////////////////////////////////////////////////
@@ -64,7 +65,7 @@ class SetupMainWindow:
         # SETUP MAIN WINDOw
         # Load widgets from "gui\uis\main_window\ui_main.py"
         # ///////////////////////////////////////////////////////////////
-        self.ui = UI_MainWindow()
+        self.ui = UiMainWindow()
         self.ui.setup_ui(self)
 
     # ADD LEFT MENUS
@@ -225,7 +226,7 @@ class SetupMainWindow:
             self,
             menu=self.ui.left_column.menus.menu_1,
             title="Settings Left Column",
-            icon_path=Functions.set_svg_icon("icon_settings.svg")
+            icon_path=set_svg_icon("icon_settings.svg")
         )
         MainFunctions.set_right_column_menu(self, self.ui.right_column.menu_1)
 
@@ -281,7 +282,7 @@ class SetupMainWindow:
             bg_color_hover=self.themes["app_color"]["dark_three"],
             bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
-        self.icon = QIcon(Functions.set_svg_icon("icon_settings.svg"))
+        self.icon = QIcon(set_svg_icon("icon_settings.svg"))
         self.left_btn_2.setIcon(self.icon)
         self.left_btn_2.setMaximumHeight(40)
         self.ui.left_column.menus.btn_2_layout.addWidget(self.left_btn_2)
@@ -295,7 +296,7 @@ class SetupMainWindow:
         # ///////////////////////////////////////////////////////////////
 
         # PAGE 1 - ADD LOGO TO MAIN PAGE
-        self.logo_svg = QSvgWidget(Functions.set_svg_image("logo_home.svg"))
+        self.logo_svg = QSvgWidget(set_svg_image("logo_home.svg"))
         self.ui.load_pages.logo_layout.addWidget(self.logo_svg, Qt.AlignCenter, Qt.AlignCenter)
 
         # PAGE 2
@@ -379,7 +380,7 @@ class SetupMainWindow:
 
         # ICON BUTTON 1
         self.icon_button_1 = PyIconButton(
-            icon_path=Functions.set_svg_icon("icon_heart.svg"),
+            icon_path=set_svg_icon("icon_heart.svg"),
             parent=self,
             app_parent=self.ui.central_widget,
             tooltip_text="Icon button - Heart",
@@ -396,7 +397,7 @@ class SetupMainWindow:
 
         # ICON BUTTON 2
         self.icon_button_2 = PyIconButton(
-            icon_path=Functions.set_svg_icon("icon_add_user.svg"),
+            icon_path=set_svg_icon("icon_add_user.svg"),
             parent=self,
             app_parent=self.ui.central_widget,
             tooltip_text="BTN with tooltip",
@@ -413,7 +414,7 @@ class SetupMainWindow:
 
         # ICON BUTTON 3
         self.icon_button_3 = PyIconButton(
-            icon_path=Functions.set_svg_icon("icon_add_user.svg"),
+            icon_path=set_svg_icon("icon_add_user.svg"),
             parent=self,
             app_parent=self.ui.central_widget,
             tooltip_text="BTN actived! (is_actived = True)",
@@ -449,7 +450,7 @@ class SetupMainWindow:
             bg_color_hover=self.themes["app_color"]["dark_three"],
             bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
-        self.icon_2 = QIcon(Functions.set_svg_icon("icon_settings.svg"))
+        self.icon_2 = QIcon(set_svg_icon("icon_settings.svg"))
         self.push_button_2.setMinimumHeight(40)
         self.push_button_2.setIcon(self.icon_2)
 
@@ -554,7 +555,7 @@ class SetupMainWindow:
             bg_color_hover=self.themes["app_color"]["dark_three"],
             bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
-        self.icon_right = QIcon(Functions.set_svg_icon("icon_arrow_right.svg"))
+        self.icon_right = QIcon(set_svg_icon("icon_arrow_right.svg"))
         self.right_btn_1.setIcon(self.icon_right)
         self.right_btn_1.setMaximumHeight(40)
         self.right_btn_1.clicked.connect(lambda: MainFunctions.set_right_column_menu(
@@ -572,7 +573,7 @@ class SetupMainWindow:
             bg_color_hover=self.themes["app_color"]["dark_three"],
             bg_color_pressed=self.themes["app_color"]["dark_four"]
         )
-        self.icon_left = QIcon(Functions.set_svg_icon("icon_arrow_left.svg"))
+        self.icon_left = QIcon(set_svg_icon("icon_arrow_left.svg"))
         self.right_btn_2.setIcon(self.icon_left)
         self.right_btn_2.setMaximumHeight(40)
         self.right_btn_2.clicked.connect(lambda: MainFunctions.set_right_column_menu(

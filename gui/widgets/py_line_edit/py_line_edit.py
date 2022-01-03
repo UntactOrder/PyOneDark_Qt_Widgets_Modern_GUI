@@ -41,11 +41,10 @@ style = '''
 # PY PUSH BUTTON
 # ///////////////////////////////////////////////////////////////
 class PyLineEdit(QLineEdit):
-    def __init__(
-        self, text="", place_holder_text="", radius=8, border_size=2,
-        color="#FFF", selection_color="#FFF", bg_color="#333", bg_color_active="#222",
-        context_color="#00ABE8"
-    ):
+    def __init__(self, text="", place_holder_text="", radius=8, border_size=2,
+                 color="#FFF", selection_color="#FFF", bg_color="#333", bg_color_active="#222",
+                 context_color="#00ABE8"
+                 ):
         super().__init__()
 
         # PARAMETERS

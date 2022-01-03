@@ -31,7 +31,7 @@ from qt_core import QRect
 from qt_core import QHBoxLayout
 
 
-class Ui_MainPages(object):
+class UiMainPages(object):
     def setupUi(self, MainPages):
         if not MainPages.objectName():
             MainPages.setObjectName(u"MainPages")
