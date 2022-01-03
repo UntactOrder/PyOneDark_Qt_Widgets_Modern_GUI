@@ -4,9 +4,11 @@ cx_Freeze builder
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 import os
 import sys
+import platform
 
 if __name__ == "__main__":
-    os.system("TITLE cx_Freeze builder")
+    if platform.system() == "Windows":
+        os.system("TITLE cx_Freeze builder")
 
     py_version = sys.version.split(" ")[0].split(".")
     if int(py_version[0]) < 3 or int(py_version[1]) < 8 or (int(py_version[1]) == 8 and int(py_version[2]) < 10):
