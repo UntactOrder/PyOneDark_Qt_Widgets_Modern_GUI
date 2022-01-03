@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e5af1a-0581-4de5-a34e-579e2e3a31a6" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/PyOneDark.iws" beforeDir="false" afterPath="$PROJECT_DIR$/PyOneDark.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/build.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1641189998355</updated>
       <workItem from="1641190001248" duration="2000" />
-      <workItem from="1641200824744" duration="3941000" />
+      <workItem from="1641200824744" duration="4267000" />
     </task>
     <servers />
   </component>
