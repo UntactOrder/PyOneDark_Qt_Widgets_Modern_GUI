@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a7d2281-c97d-47a3-a6fd-b6312e925c23" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iws" beforeDir="false" afterPath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.spec" beforeDir="false" afterPath="$PROJECT_DIR$/build.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/res/icon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-    </list>
+    <list default="true" id="7a7d2281-c97d-47a3-a6fd-b6312e925c23" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
