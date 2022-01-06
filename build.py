@@ -66,12 +66,8 @@ if __name__ == "__main__":
         else:
             os.system(f"{py} -m pip install pyinstaller")
         # 새로운 build.spec 생성하려면 주석 처리된 것을 이용하세요.
-        # os.system(f"{py} -m PyInstaller –onefile -n newName --icon=icon.ico --hidden-import PySide6.QtSvg src/main/main.py --clean")
-        cmd = f"{py} -m PyInstaller –onefile build.spec --noconfirm"
-        if input("하나의 파일로 압축할까요? (y to yes) : ") != "y":
-            cmd = cmd.replace("–onefile ", "")
-        print("command: " + cmd)
-        os.system(cmd)
+        # os.system(f"{py} -m PyInstaller -n newName --icon=icon.ico --hidden-import PySide6.QtSvg src/main/main.py --clean")
+        os.system(f"{py} -m PyInstaller build.spec --noconfirm")
 
     if version == "2":
         os.remove("src/main/qt_core.py")

@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a7d2281-c97d-47a3-a6fd-b6312e925c23" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/PyOneDark.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyOneDark.ipr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyOneDark.iws" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iws" beforeDir="false" afterPath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.py" beforeDir="false" afterPath="$PROJECT_DIR$/build.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/core/json_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/core/json_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/qt_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/qt_core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.spec" beforeDir="false" afterPath="$PROJECT_DIR$/build.spec" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +108,8 @@
       <workItem from="1641356553855" duration="177000" />
       <workItem from="1641356763974" duration="9000" />
       <workItem from="1641357431122" duration="127000" />
-      <workItem from="1641357592739" duration="28914000" />
+      <workItem from="1641357592739" duration="30967000" />
+      <workItem from="1641463347006" duration="1489000" />
     </task>
     <servers />
   </component>

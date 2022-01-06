@@ -11,7 +11,7 @@ console_mode = False
 # CHECK PYSIDE VERSION
 PYSIDE_VERSION = ['PySide6.QtSvg', 'shiboken6']
 EXCLUDES = ['PySide6.QtNetwork', 'PySide6.QtQml']
-with open("src/main/qt_core.py", "wt", encoding='utf-8') as f:
+with open("src/main/qt_core.py", "rt", encoding='utf-8') as f:
     for line in f.readlines():
         if "SUPPORT_WINDOWS_7" in line:
             if "True" in line:
@@ -42,8 +42,8 @@ VSVersionInfo(
   ffi=FixedFileInfo(
 # filevers and prodvers should be always a tuple with four items: (1, 2, 3, 4)
 # Set not needed items to zero 0.
-filevers=({__VER_SPL__[0]}, {__VER_SPL__[1], {__VER_SPL__[2], {__VER_SPL__[3]),
-prodvers=({__VER_SPL__[0]}, {__VER_SPL__[1], {__VER_SPL__[2], {__VER_SPL__[3]),
+filevers=({__VER_SPL__[0]}, {__VER_SPL__[1]}, {__VER_SPL__[2]}, {__VER_SPL__[3]}),
+prodvers=({__VER_SPL__[0]}, {__VER_SPL__[1]}, {__VER_SPL__[2]}, {__VER_SPL__[3]}),
 # Contains a bitmask that specifies the valid bits 'flags'r
 mask=0x3f,
 # Contains a bitmask that specifies the Boolean attributes of the file.
@@ -80,13 +80,17 @@ VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
 """
 if not os.path.isdir('build'):
     os.mkdir('build')
-with open('build\version.rc', 'wt', encoding='utf-8') as f:
+with open('build/version.rc', 'wt', encoding='utf-8') as f:
     f.write(version)
 
 
 # BUILD
 HIDDEN_IMPORTS = PYSIDE_VERSION + []  # write something in [] to import
 EXCLUDES = EXCLUDES + []  # write something in [] to exclude
+
+ONE_FILE_MODE = False
+if input("\n\n하나의 파일로 압축할까요? (y to yes) : ") == "y":
+    ONE_FILE_MODE = True
 
 a = Analysis(['src/main/main.py'],
              pathex=[],
@@ -108,28 +112,51 @@ a.datas += [('icon.ico','icon.ico','DATA'),
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
-exe = EXE(pyz,
-          a.scripts,
-          [],
-          exclude_binaries=True,
-          name=__NAME__,
-          debug=debug_mode,
-          bootloader_ignore_signals=False,
-          strip=False,
-          upx=False,
-          console=console_mode,
-          icon='icon.ico',
-          version='dist\version.rc',
-          disable_windowed_traceback=False,
-          target_arch=None,
-          codesign_identity=None,
-          entitlements_file=None)
+if ONE_FILE_MODE:
+    exe = EXE(pyz,
+              a.scripts,
+              [],
+              exclude_binaries=True,
+              name=__NAME__,
+              debug=debug_mode,
+              bootloader_ignore_signals=False,
+              strip=False,
+              upx=False,
+              console=console_mode,
+              icon='icon.ico',
+              version='build/version.rc',
+              disable_windowed_traceback=False,
+              target_arch=None,
+              codesign_identity=None,
+              entitlements_file=None)
+else:
+    exe = EXE(pyz,
+              a.scripts,
+              a.binaries,
+              a.zipfiles,
+              a.datas,
+              [],
+              name=__NAME__,
+              debug=debug_mode,
+              bootloader_ignore_signals=False,
+              strip=False,
+              upx=False,
+              upx_exclude=[],
+              runtime_tmpdir=None,
+              console=console_mode,
+              icon='icon.ico',
+              version='build/version.rc',
+              disable_windowed_traceback=False,
+              target_arch=None,
+              codesign_identity=None,
+              entitlements_file=None)
 
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=False,
-               upx_exclude=[],
-               name=__NAME__)
+if not ONE_FILE_MODE:
+    coll = COLLECT(exe,
+                   a.binaries,
+                   a.zipfiles,
+                   a.datas,
+                   strip=False,
+                   upx=False,
+                   upx_exclude=[],
+                   name=__NAME__)
