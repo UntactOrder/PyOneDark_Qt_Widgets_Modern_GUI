@@ -47,7 +47,7 @@ class Settings(object):
     # ///////////////////////////////////////////////////////////////
     def serialize(self):
         # WRITE JSON FILE
-        with open(self.settings_path, "w", encoding='utf-8') as write:
+        with open(self.settings_path, "wt", encoding='utf-8') as write:
             json.dump(self.items, write, indent=4)
 
     # DESERIALIZE JSON

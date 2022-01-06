@@ -8,13 +8,13 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iml" filepath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PyOneDark.iml" filepath="$PROJECT_DIR$/PyOneDark.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Python 3.10" project-jdk-type="Python SDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
