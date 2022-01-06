@@ -88,14 +88,10 @@ with open('build/version.rc', 'wt', encoding='utf-8') as f:
 HIDDEN_IMPORTS = PYSIDE_VERSION + []  # write something in [] to import
 EXCLUDES = EXCLUDES + []  # write something in [] to exclude
 
-ONE_FILE_MODE = False
-if input("\n\n하나의 파일로 압축할까요? (y to yes) : ") == "y":
-    ONE_FILE_MODE = True
-
 a = Analysis(['src/main/main.py'],
              pathex=[],
              binaries=[],
-             datas=[],
+             datas=[('res/*', 'res')],
              hiddenimports=HIDDEN_IMPORTS,
              hookspath=[],
              hooksconfig={},
@@ -106,30 +102,12 @@ a = Analysis(['src/main/main.py'],
              cipher=block_cipher,
              noarchive=False)
 
-a.datas += [('icon.ico','icon.ico','DATA'),
-            ('res','res','DATA')
-			]
+#a.datas += [('icon.ico','icon.ico','DATA')
+#			]  # some files to add (--add-data option)
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
-if ONE_FILE_MODE:
-    exe = EXE(pyz,
-              a.scripts,
-              [],
-              exclude_binaries=True,
-              name=__NAME__,
-              debug=debug_mode,
-              bootloader_ignore_signals=False,
-              strip=False,
-              upx=False,
-              console=console_mode,
-              icon='icon.ico',
-              version='build/version.rc',
-              disable_windowed_traceback=False,
-              target_arch=None,
-              codesign_identity=None,
-              entitlements_file=None)
-else:
+if input("\n\n하나의 파일로 압축할까요? (y to yes) : ") == "y":
     exe = EXE(pyz,
               a.scripts,
               a.binaries,
@@ -144,14 +122,30 @@ else:
               upx_exclude=[],
               runtime_tmpdir=None,
               console=console_mode,
-              icon='icon.ico',
+              icon='res/icon.ico',
+              version='build/version.rc',
+              disable_windowed_traceback=False,
+              target_arch=None,
+              codesign_identity=None,
+              entitlements_file=None)
+else:
+    exe = EXE(pyz,
+              a.scripts,
+              [],
+              exclude_binaries=True,
+              name=__NAME__,
+              debug=debug_mode,
+              bootloader_ignore_signals=False,
+              strip=False,
+              upx=False,
+              console=console_mode,
+              icon='res/icon.ico',
               version='build/version.rc',
               disable_windowed_traceback=False,
               target_arch=None,
               codesign_identity=None,
               entitlements_file=None)
 
-if not ONE_FILE_MODE:
     coll = COLLECT(exe,
                    a.binaries,
                    a.zipfiles,
