@@ -27,7 +27,7 @@ for pkg in PACKAGES:
 print("Excluded packages : ", EXCLUDES, end="\n\n")
 
 # ADD FILES
-FILES = ["icon.ico", "res/"]
+FILES = ["res/"]
 
 # PARSE CONFIG FROM SETTINGS.JSON
 from src.main.gui.core.json_settings import Settings
@@ -41,7 +41,7 @@ TARGET = Executable(
         ".exe" if sys.platform == "win32" else ""),
     shortcut_name=settings['app_name'].split()[0],
     shortcut_dir="DesktopFolder",
-    icon="icon.ico"
+    icon="res/icon.ico"
 )
 
 # SETUP CX FREEZE

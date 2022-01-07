@@ -104,8 +104,8 @@ a = Analysis(
     noarchive=False
 )
 
-a.datas += [('icon.ico', 'icon.ico', 'DATA')
-			]  # some files to add (--add-data option)
+#a.datas += [('icon.ico', 'icon.ico', 'DATA')
+#			]  # some files to add (--add-data option)
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
@@ -125,7 +125,7 @@ if input("\n\n하나의 파일로 압축할까요? (y to yes) : ") == "y":
         upx_exclude=[],
         runtime_tmpdir=None,
         console=console_mode,
-        icon='icon.ico',
+        icon='res/icon.ico',
         version='build/version.rc',
         disable_windowed_traceback=False,
         argv_emulation=False,
@@ -145,7 +145,7 @@ else:
         strip=False,
         upx=False,
         console=console_mode,
-        icon='icon.ico',
+        icon='res/icon.ico',
         version='build/version.rc',
         disable_windowed_traceback=False,
         argv_emulation=False,
