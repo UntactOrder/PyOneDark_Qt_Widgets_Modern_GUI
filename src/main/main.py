@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ///////////////////////////////////////////////////////////////
 #
 # BY: WANDERSON M.PIMENTA
@@ -39,6 +40,11 @@ from src.main.qt_core import QMainWindow
 from src.main.qt_core import QApplication
 from src.main.qt_core import QIcon
 
+from src.main.qt_core import Qt
+from src.main.qt_core import QGraphicsDropShadowEffect
+from src.main.qt_core import QColor
+from src.main.qt_core import QTimer
+
 # IMPORT SETTINGS
 # ///////////////////////////////////////////////////////////////
 from src.main.gui.core.json_settings import Settings
@@ -48,6 +54,8 @@ from src.main.gui.core.json_settings import Settings
 # MAIN WINDOW
 from src.main.gui.uis.windows.main_window import UiMainWindow
 from src.main.gui.uis.windows.main_window import SetupMainWindow
+# SPLASH SCREEN
+from src.main.gui.uis.pages.ui_splash_screen import UiSplashScreen
 
 # IMPORT PY ONE DARK WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -224,6 +232,67 @@ class MainWindow(QMainWindow):
         self.dragPos = event.globalPos() if SUPPORT_WINDOWS_7 else event.globalPosition().toPoint()
 
 
+# SPLASH SCREEN
+class SplashScreen(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = UiSplashScreen()
+        self.ui.setupUi(self)
+
+        # UI ==> INTERFACE CODES
+        ########################################################################
+        self.counter = 0
+
+        # REMOVE TITLE BAR
+        self.setWindowFlag(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+
+        # DROP SHADOW EFFECT
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(20)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0, 0, 0, 60))
+        self.ui.dropShadowFrame.setGraphicsEffect(self.shadow)
+
+        # QTIMER ==> START
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.progress)
+        # TIMER IN MILLISECONDS
+        self.timer.start(35)
+
+        # CHANGE DESCRIPTION
+
+        # Initial Text
+        self.ui.label_description.setText("<strong>WELCOME</strong> TO MY APPLICATION")
+
+        # Change Texts
+        QTimer.singleShot(1500, lambda: self.ui.label_description.setText("<strong>LOADING</strong> DATABASE"))
+        QTimer.singleShot(3000, lambda: self.ui.label_description.setText("<strong>LOADING</strong> USER INTERFACE"))
+
+        # SHOW ==> MAIN WINDOW
+        ########################################################################
+        self.show()
+        # ==> END #
+
+    # ==> APP FUNCTIONS
+    ########################################################################
+    def progress(self):
+        # SET VALUE TO PROGRESS BAR
+        self.ui.progressBar.setValue(self.counter)
+
+        # CLOSE SPLASH SCREE AND OPEN APP
+        if self.counter > 100:
+            # STOP TIMER
+            self.timer.stop()
+
+            # CLOSE SPLASH SCREEN
+            self.close()
+
+        # INCREASE COUNTER
+        self.counter += 1
+
+
 # SETTINGS WHEN TO START
 # Set the initial class and also additional parameters of the "QApplication" class
 # ///////////////////////////////////////////////////////////////
@@ -232,8 +301,13 @@ if __name__ == "__main__":
     # ///////////////////////////////////////////////////////////////
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("res/icon.ico"))
-    window = MainWindow()
+
+    # SHOW SPLASH SCREEN
+    # ///////////////////////////////////////////////////////////////
+    window = SplashScreen()
+    app.exec_() if SUPPORT_WINDOWS_7 else app.exec()
 
     # EXEC APP
     # ///////////////////////////////////////////////////////////////
+    window = MainWindow()
     sys.exit(app.exec_() if SUPPORT_WINDOWS_7 else app.exec())

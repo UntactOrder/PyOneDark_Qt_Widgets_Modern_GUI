@@ -3,15 +3,63 @@
   <component name="ChangeListManager">
     <list default="true" id="7a7d2281-c97d-47a3-a6fd-b6312e925c23" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iws" beforeDir="false" afterPath="$PROJECT_DIR$/PyOneDark_Qt_Widgets_Modern_GUI.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.spec" beforeDir="false" afterPath="$PROJECT_DIR$/build.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/res/icon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/columns/ui_left_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/columns/ui_left_column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/columns/ui_right_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/columns/ui_right_column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/pages/ui_main_pages.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/pages/ui_main_pages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/functions_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/functions_main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/setup_main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/setup_main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/ui_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/uis/windows/main_window/ui_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_circular_progress/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_circular_progress/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_circular_progress/py_circular_progress.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_circular_progress/py_circular_progress.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_credits_bar/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_credits_bar/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_credits_bar/py_credits.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_credits_bar/py_credits.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_grips/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_grips/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_grips/py_grips.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_grips/py_grips.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_icon_button/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_icon_button/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_icon_button/py_icon_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_icon_button/py_icon_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/py_icon.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/py_icon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/py_left_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/py_left_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/py_left_column.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_column/py_left_column.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/py_div.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/py_div.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/py_left_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/py_left_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/py_left_menu_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_left_menu/py_left_menu_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_line_edit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_line_edit/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_line_edit/py_line_edit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_line_edit/py_line_edit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_push_button/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_push_button/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_push_button/py_push_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_push_button/py_push_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_slider/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_slider/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_slider/py_slider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_slider/py_slider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_table_widget/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_table_widget/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_table_widget/py_table_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_table_widget/py_table_widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_table_widget/style.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_table_widget/style.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/py_div.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/py_div.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/py_title_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/py_title_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/py_title_button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_title_bar/py_title_button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_toggle/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_toggle/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_toggle/py_toggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_toggle/py_toggle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_window/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_window/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_window/py_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_window/py_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/widgets/py_window/styles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/widgets/py_window/styles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/qt_core.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/qt_core.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,21 +85,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/gui/uis/pages" />
     <property name="project.structure.last.edited" value="프로젝트" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\IRACK\PyOneDark_Qt_Widgets_Modern_GUI\res\gui\uis\pages" />
+      <recent name="C:\Users\IRACK\PyOneDark_Qt_Widgets_Modern_GUI\src\main\gui\uis\pages" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\IRACK\PyOneDark_Qt_Widgets_Modern_GUI\src\main\gui\uis\pages" />
+      <recent name="C:\Users\IRACK\PyOneDark_Qt_Widgets_Modern_GUI\src\main\gui\uis\windows\main_window" />
       <recent name="C:\PyOneDark_Qt_Widgets_Modern_GUI\res" />
       <recent name="C:\PyOneDark_Qt_Widgets_Modern_GUI" />
       <recent name="C:\Users\IRACK\Desktop\PyOneDark_Qt_Widgets_Modern_GUI\res" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.build">
+  <component name="RunManager" selected="Python.main">
     <configuration name="build" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyOneDark" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,8 +179,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.build" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.build" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +200,7 @@
       <workItem from="1641481535981" duration="435000" />
       <workItem from="1641482027514" duration="1085000" />
       <workItem from="1641528901415" duration="453000" />
+      <workItem from="1641532902450" duration="3260000" />
     </task>
     <servers />
   </component>
@@ -170,7 +225,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PyOneDark_Qt_Widgets_Modern_GUI$a.coverage" NAME="a 커버리지 결과" MODIFIED="1641396452398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyOneDark_Qt_Widgets_Modern_GUI$main__3_8_.coverage" NAME="main (3.8) 커버리지 결과" MODIFIED="1641482388559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main" />
-    <SUITE FILE_PATH="coverage/PyOneDark_Qt_Widgets_Modern_GUI$main.coverage" NAME="main 커버리지 결과" MODIFIED="1641482417494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main" />
     <SUITE FILE_PATH="coverage/PyOneDark_Qt_Widgets_Modern_GUI$build.coverage" NAME="build 커버리지 결과" MODIFIED="1641529269649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyOneDark_Qt_Widgets_Modern_GUI$main.coverage" NAME="main 커버리지 결과" MODIFIED="1641535132067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/main" />
   </component>
 </project>
