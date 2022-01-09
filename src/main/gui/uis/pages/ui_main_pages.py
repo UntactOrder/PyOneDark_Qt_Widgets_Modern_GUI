@@ -33,7 +33,7 @@ from src.main.qt_core import QHBoxLayout
 
 
 class UiMainPages(object):
-    def setupUi(self, MainPages):
+    def setup_ui(self, MainPages):
         if not MainPages.objectName():
             MainPages.setObjectName(u"MainPages")
         MainPages.resize(860, 600)

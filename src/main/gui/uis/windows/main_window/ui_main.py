@@ -238,7 +238,7 @@ class UiMainWindow(object):
 
         # IMPORT MAIN PAGES TO CONTENT AREA
         self.load_pages = UiMainPages()
-        self.load_pages.setupUi(self.content_area_left_frame)
+        self.load_pages.setup_ui(self.content_area_left_frame)
 
         # RIGHT BAR
         self.right_column_frame = QFrame()
