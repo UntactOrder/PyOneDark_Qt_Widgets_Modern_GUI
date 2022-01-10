@@ -3,7 +3,6 @@ import os
 import sys
 
 
-block_cipher = None
 debug_mode = False
 console_mode = False
 
@@ -20,6 +19,23 @@ with open("src/main/qt_core.py", "rt", encoding='utf-8') as f:
                 break
             elif "False" in line:
                 break
+
+
+# GET CRYTO KEY
+key_path = "build.key"
+if not os.path.isfile(key_path):
+    print("ERROR: build.key not found", flush=True)
+    while True:
+        key = input("16자리 암호화 키를 입력하세요 : ")
+        if len(key) == 16:
+            with open(key_path, "wt", encoding='utf-8') as f:
+                f.write(key)
+            break
+        else:
+            print("ERROR: 입력된 키가 16자리가 아닙니다.")
+with open("build.key", "rt", encoding='utf-8') as f:
+    CRYPTO_KEY = f.read()
+block_cipher = pyi_crypto.PyiBlockCipher(key=CRYPTO_KEY)
 
 
 # PARSE INFO FROM SETTINGS.JSON
@@ -109,7 +125,7 @@ a = Analysis(
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
-if input("\n\n하나의 파일로 압축할까요? (y to yes) : ") == "y":
+if input("\n\n하나의 파일로 압축할까요? (라이센스 주의!; PySide6의 경우 라이센스 위반) (y to yes) : ") == "y":
     exe = EXE(
         pyz,
         a.scripts,

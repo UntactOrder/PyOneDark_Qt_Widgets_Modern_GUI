@@ -236,8 +236,6 @@ class SplashWindow(QMainWindow, UiSplashWindow):
         UiSplashWindow.__init__(self)
         self.args = args
 
-        self.progress = 0
-
         # LOAD SETTINGS
         # ///////////////////////////////////////////////////////////////
         settings = Settings()
@@ -272,23 +270,21 @@ class SplashWindow(QMainWindow, UiSplashWindow):
     def proceed(self):
         self.construct_shadow()  # 그림자 오류 수정 (로딩 객체 가려지는 문제 해결)
 
-        # SET VALUE TO PROGRESS BAR
-        self.set_progress(self.progress)
-
         # CLOSE SPLASH SCREE AND OPEN APP
-        if self.progress > 100:
+        if self.get_progress() > 99:
             # STOP TIMER
             self.timer.stop()
 
             # SHOW LOGIN PANEL
             self.fade_objects(lambda: self.show_login_panel(self))
 
-        # INCREASE COUNTER
-        self.progress += 1
+        # SET VALUE TO PROGRESS BAR
+        self.set_progress(self.get_progress() + 1)
 
-    def on_close_button_clicked(self):
+    @staticmethod
+    def on_close_button_clicked(window, callback=None):
         # CLOSE SPLASH SCREEN
-        self.hide_login_panel(self, lambda: time.sleep(0.01) or self.close())
+        super().on_close_button_clicked(window, lambda: time.sleep(0.01) or window.close())
 
 
 # SETTINGS WHEN TO START
@@ -305,6 +301,8 @@ if __name__ == "__main__":
     # ///////////////////////////////////////////////////////////////
     window = SplashWindow(app_args)
     result = app.exec_() if SUPPORT_WINDOWS_7 else app.exec()
+    del window, SplashWindow, UiSplashWindow  # cache는 삭제되지 않음.
+
     if 'login_success' not in app_args or not app_args['login_success']:
         sys.exit(result)
 

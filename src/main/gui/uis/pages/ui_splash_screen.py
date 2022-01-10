@@ -240,29 +240,87 @@ class UiSplashScreen(object):
             "}\n"
         )
         self.login_button.setVisible(False)
-        self.password_edit = QLineEdit(self.centralwidget)
+
+        class QLineEditExt(QLineEdit):
+            def focusInEvent(self, event):
+                super(QLineEditExt, self).focusInEvent(event)
+                try:
+                    self.on_focus_in_event()
+                except Exception:
+                    pass
+
+            def focusOutEvent(self, event):
+                super(QLineEditExt, self).focusOutEvent(event)
+                try:
+                    self.on_focus_out_event()
+                except Exception:
+                    pass
+
+            def set_on_focus_in_event(self, override):
+                # 메서드 덮어쓰기
+                self.on_focus_in_event = override
+
+            def set_on_focus_out_event(self, override):
+                # 메서드 덮어쓰기
+                self.on_focus_out_event = override
+
+        self.password_edit = QLineEditExt(self.centralwidget)
         self.password_edit.setObjectName(u"password_edit")
         self.password_edit.setEchoMode(QLineEdit.Password)
         self.password_edit.setAlignment(Qt.AlignHCenter)
-        self.password_edit.setGeometry(QRect(320, 400, 160, 40))
+        self.password_edit.setGeometry(QRect(310, 390, 160, 35))
         password_edit_font = QFont()
         password_edit_font.setFamily(u"Segoe UI")
         password_edit_font.setPointSize(12)
         self.password_edit.setFont(password_edit_font)
-        self.password_edit.setStyleSheet(
-            u"QPushButton {\n"
-            "	color: rgb(255, 255, 255);\n"
-            "	border: none;\n"
-            "	border-radius: 15px;\n"
+        self.PW_EDIT_STYLE = (
+            u"QLineEdit {\n"
+            "	color: rgb(100, 116, 166);\n"
+            "	border: solid;\n"
+            "	border-width: 4px;\n"
+            "	border-radius: 10px;\n"
+            "	border-color: rgb(98, 114, 164);\n"
+            "	background-color: #404859;\n"
+            "}\n"
+            "QLineEdit:hover {\n"
             "	background-color: #485062;\n"
             "}\n"
-            "QPushButton:hover {\n"
-            "	background-color: #55aaff;\n"
+            "QLineEdit:focus {\n"
+            "	color: rgb(255, 255, 255);\n"
+            "	border-color: #55aaff;\n"
+            "	background-color: #4f5f6f;\n"
+            "}\n",
+            u"QLineEdit {\n"
+            "	color: rgb(0, 172, 86);\n"
+            "	border: solid;\n"
+            "	border-width: 4px;\n"
+            "	border-radius: 10px;\n"
+            "	border-color: rgb(0, 172, 86);\n"
+            "	background-color: #404859;\n"
             "}\n"
-            "QPushButton:pressed {\n"
-            "	background-color: #ff007f;\n"
+            "QLineEdit:hover {\n"
+            "	background-color: #485062;\n"
             "}\n"
-        )
+            "QLineEdit:focus {\n"
+            "	background-color: #4f5f6f;\n"
+            "}\n",
+            u"QLineEdit {\n"
+            "	color: rgb(139, 50, 67);\n"
+            "	border: solid;\n"
+            "	border-width: 4px;\n"
+            "	border-radius: 10px;\n"
+            "	border-color: rgb(139, 50, 67);\n"
+            "	background-color: rgb(34, 34, 48);\n"
+            "}\n"
+            "QLineEdit:hover {\n"
+            "	background-color: rgb(32, 32, 46);\n"
+            "}\n"
+            "QLineEdit:focus {\n"
+            "	background-color: rgb(30, 30, 44);\n"
+            "}\n"
+        )  # 0: plane, 1: correct, 2: incorrect
+        self.password_edit.setStyleSheet(self.PW_EDIT_STYLE[0])
+        self.password_edit.setVisible(False)
 
         self.verticalLayout.addWidget(self.dropShadowFrame)
         # 버튼 클릭 하려면 레이아웃 안에 넣어야 하는데 귀찮아서 그냥 상위 레이아웃에 갖다 붙였음.
