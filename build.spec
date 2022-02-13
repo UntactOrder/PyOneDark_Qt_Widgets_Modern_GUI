@@ -92,7 +92,7 @@ a = Analysis(
     ['src/main/main.py'],
     pathex=[],
     binaries=[],
-    datas=[('res/*', 'res')],
+    datas=[('res', 'res')],
     hiddenimports=HIDDEN_IMPORTS,
     hookspath=[],
     hooksconfig={},
